@@ -7,7 +7,7 @@
 
 int	main(void)
 {
-	printf("\n--==-- TEST STARTING --==--\n");
+	printf("\n--==-- TEST STARTING --==--\n\n");
 // ------ TEST FT_: isalpha, isdigit, isalnum, isprint ------
 
 	int	c;
@@ -105,7 +105,6 @@ char *str = "hello !";
 */
 // ------ TEST FT_: atoi  ------
 
-	char in1[] = "Deze String komt echt binnen";
 /*	int ing1 = atoi(in1);
 	int ing2 = ft_atoi(in1);
 
@@ -122,13 +121,27 @@ char *str = "hello !";
 
 	printf("Control:	%s\nTest:		%s", dst10, dst20);
 */
-// ------ TEST FT_: substr ------
-
+// ------ TEST FT_: strjoin ------
+/*
+	char in1[] = "Deze String is eerst";
+	char in2[] = " en deze erna";
 	char *dst10;
 
-	dst10 = ft_substr(in1, 6, 40);
+	dst10 = ft_strjoin(in1, in2);
 
-	printf("Test:		%s", dst10);
+	printf("Test:		%s\nLength:\n	%zu\n	%zu\n	%zu\n", dst10, ft_strlen(in1), ft_strlen(in2), ft_strlen(dst10));
+	free (dst10);
+*/
+// ------ TEST FT_: strtrim ------
+
+	char in1[] = "\n\n\n\t\t\tiiiiiii\t    Deze String is eerst     \n\n\n\n\t\t\tiiii\t\t";
+	char *dst10;
+
+	dst10 = ft_strtrim(in1, " \n\ti");
+
+	printf("Test:	%s\n", dst10);
+	free (dst10);
+
 
 	printf("\n--==-- TEST COMPLETE --==--\n");
 	return(0);

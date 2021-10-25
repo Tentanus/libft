@@ -6,15 +6,15 @@
 /*   By: mweverli <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/21 19:18:08 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/10/22 18:02:46 by mweverli      ########   odam.nl         */
+/*   Updated: 2021/10/25 17:47:59 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i; 
+	size_t			i;
 	unsigned char	*b1;
 	unsigned char	*b2;
 

@@ -32,6 +32,8 @@ SRC =	ft_isalpha.c \
 		ft_strdup.c \
 		\
 		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
 #		ft_ \
 
 # Make Commands:

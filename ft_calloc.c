@@ -1,8 +1,8 @@
 #include "libft.h"
 
-void *ft_calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	char *ptr;
+	char	*ptr;
 
 	ptr = malloc(nitems * size);
 	if (!(ptr))

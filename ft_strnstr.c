@@ -6,7 +6,7 @@
 /*   By: mweverli <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/22 12:55:36 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/10/22 18:08:16 by mweverli      ########   odam.nl         */
+/*   Updated: 2021/10/25 17:49:26 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *hst, const char *ndl, size_t len)
 {
-	size_t i;
-	size_t size;
+	size_t	i;
+	size_t	size;
 
 	if (*ndl == '\0' || len == 0)
 		return ((char *) hst);

@@ -2,10 +2,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *b;
+	char	*b;
 
 	b = (char *)s + ft_strlen(s);
-	while(s != b)
+	while (s != b)
 	{
 		if (*b == (unsigned char) c)
 			return (b);
@@ -13,5 +13,5 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (*b == (unsigned char) c)
 		return (b);
-	return(0);
+	return (0);
 }
