@@ -6,7 +6,7 @@
 /*   By: mweverli <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/01 12:03:46 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/11/01 15:35:57 by mweverli      ########   odam.nl         */
+/*   Updated: 2021/11/01 15:51:18 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,19 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	size_t	j;
+	size_t	wc;
 
 	j = 0;
+	wc = ft_word_count(s, c);
 	if (!s)
 		return (0);
-	arr = malloc((ft_word_count(s, c) + 1) * sizeof(char *));
+	arr = malloc((wc + 1) * sizeof(char *));
 	if (!arr)
 		return (0);
-	while (*s != '\0')
+	while (*s != '\0' && j < wc)
 	{
 		while (*s == c)
 			s++;
-		if (*s == '\0')
-			break ;
 		arr[j] = ft_make_word(((char *)&*s), c);
 		if (!arr[j])
 			return (ft_remove(arr, j));
@@ -84,21 +84,3 @@ char	**ft_split(char const *s, char c)
 	arr[j] = 0;
 	return (arr);
 }
-/*
-int	main(void)
-{
-	char	str[] = "      split       this for   me  !        ";
-	char	c = ' ';
-	size_t	i = 0;
-	char	**d;
-
-	d = ft_split(str, c);
-	printf("--------------\n\n----result----\n");
-	while (i <= ft_word_count(str, c))
-	{
-		printf("%zu	%s\n", i, d[i]);
-		i++;
-	}
-	return (0);
-}
-*/
