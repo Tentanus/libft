@@ -4,7 +4,7 @@ CC = gcc
 CFL = -Wall -Werror -Wextra
 NAME = libft.a
 
-OSRC = $(subst .c,.o, $(SRC))
+OBJ = $(subst .c,.o, $(SRC))
 
 SRC =	ft_isalpha.c \
 		ft_isdigit.c \
@@ -34,29 +34,44 @@ SRC =	ft_isalpha.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-#		ft_ \
+		ft_split.c \
+		ft_itoa.c \
+		ft_strmapi.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
+SRC_BONUS =	ft_lstnew.c \
+#		\
 
 # Make Commands:
-
 all: $(NAME)
 
-$(NAME): $(OSRC)
-	ar rcs $(NAME) $(OSRC)
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $^
+
+bonus: $(NAME)($(OBJ_BONUS))
+#	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
 
 %.o: %.c
 	$(CC) $(CFL) -c $^
 
 clean:
-	rm $(OSRC) $(NAME)
+	rm $(OBJ) $(NAME)
 
 fclean:
-	rm -f $(OSRC) $(NAME) a.out
+	rm -f $(OBJ) $(NAME)
 
+bclean:
+	rm -f $(OBJ) $(OBJ_BONUS) $(NAME)
 re: fclean all
 
 clear:
 	clear
 
-test: clear $(OSRC) $(NAME)
-	$(CC) $(CFL) main.c$(OSRC)
+test: clear $(OBJ) $(NAME)
+	$(CC) $(CFL) main.c$(OBJ)
 	./a.out

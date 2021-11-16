@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/22 12:55:36 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/11/14 20:08:18 by mweverli      ########   odam.nl         */
+/*   Created: 2021/11/08 10:42:08 by mweverli      #+#    #+#                 */
+/*   Updated: 2021/11/14 20:12:14 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *hst, const char *ndl, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	size;
+	int		i;
+	char	*str;
+	char	*sc;
 
-	if (*ndl == '\0' || len == 0)
-		return ((char *) hst);
+	sc = (char *)s;
 	i = 0;
-	size = ft_strlen(ndl);
-	while (hst[i] != '\0' && (i + size) <= len)
+	str = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!str)
+		return (0);
+	while (sc[i] != '\0')
 	{
-		if (!(ft_memcmp((hst + i), ndl, size)))
-			return ((char *) hst + i);
+		str[i] = f(i, sc[i]);
 		i++;
 	}
-	return (0);
+	str[i] = '\0';
+	return (str);
 }

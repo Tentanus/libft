@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stddef.h>
@@ -81,9 +79,10 @@ char *str = "hello !";
 	r2 = ft_strlcpy(buff2, str, 2);
 
 	printf("\nControl:	%zu	%s\nTest:		%zu	%s\n", r1, buff1, r2, buff2);
+*/
 // ------ TEST FT_: strlcat  ------
-
-	har *str = "the cake is a lie !\0I'm hidden lol\r\n";
+/*
+	char *str = "the cake is a lie !\0I'm hidden lol\r\n";
 	char buff1[0xF00] = "there is no stars in the sky";
 	char buff2[0xF00] = "there is no stars in the sky";
 	size_t r1;
@@ -93,9 +92,10 @@ char *str = "hello !";
 	r1 = strlcat(buff1, str, max);
 	r2 = ft_strlcat(buff2, str, max);
 
-//	printf("\nControl:	%zu	%s\nTest:		%zu	%s\n", r1, buff1, r2, buff2);
-
+	printf("\nControl:	%zu	%s\nTest:		%zu	%s\n", r1, buff1, r2, buff2);
+*/
 // ------ TEST FT_: memchr  ------
+/*
 
 	c = 't';
 	char *s1 = ft_memchr(buff1, c, 4);
@@ -133,7 +133,7 @@ char *str = "hello !";
 	free (dst10);
 */
 // ------ TEST FT_: strtrim ------
-
+/*
 	char in1[] = "\n\n\n\t\t\tiiiiiii\t    Deze String is eerst     \n\n\n\n\t\t\tiiii\t\t";
 	char *dst10;
 
@@ -141,7 +141,13 @@ char *str = "hello !";
 
 	printf("Test:	%s\n", dst10);
 	free (dst10);
+*/
+//------- TEST FT_: lstnew -------
 
+	int *d;
+
+	*d = 3;
+	printf("int:	%d\n", ft_lstnew((void *)d));
 
 	printf("\n--==-- TEST COMPLETE --==--\n");
 	return(0);

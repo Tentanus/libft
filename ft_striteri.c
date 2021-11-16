@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_striteri.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/22 12:55:36 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/11/14 20:08:18 by mweverli      ########   odam.nl         */
+/*   Created: 2021/11/08 11:34:12 by mweverli      #+#    #+#                 */
+/*   Updated: 2021/11/14 20:18:38 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *hst, const char *ndl, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
-	size_t	size;
 
-	if (*ndl == '\0' || len == 0)
-		return ((char *) hst);
 	i = 0;
-	size = ft_strlen(ndl);
-	while (hst[i] != '\0' && (i + size) <= len)
+	while (s[i] != '\0')
 	{
-		if (!(ft_memcmp((hst + i), ndl, size)))
-			return ((char *) hst + i);
+		f(i, &s[i]);
 		i++;
 	}
-	return (0);
 }
