@@ -6,7 +6,7 @@
 /*   By: mweverli <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/01 12:04:07 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/11/01 12:04:10 by mweverli      ########   odam.nl         */
+/*   Updated: 2021/11/24 14:35:09 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	d = b;
 	while (len > 0)
 	{
-		*d++ = c;
+		*d = c;
+		d++;
 		len--;
 	}
 	return (b);

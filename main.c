@@ -8,6 +8,7 @@ int	main(void)
 	printf("\n--==-- TEST STARTING --==--\n\n");
 // ------ TEST FT_: isalpha, isdigit, isalnum, isprint ------
 
+/*
 	int	c;
 
 	for (c = 0; c <= 300; c++)
@@ -25,7 +26,7 @@ int	main(void)
 		if (isprint(c) != ft_isprint(c))
 			printf("ERROR ft_isprint = Control:%d	Test: %d		char:	%c	numb: %d\n", isprint(c), ft_isprint(c), c, c);
 	}
- 
+*/
 // ------ TEST FT_: strlen  ------
 /*
 	char str[] = "this is a test string";
@@ -34,7 +35,7 @@ int	main(void)
 		printf("Control: %lu		Test: %lu		String: |%s|\n", strlen(str), ft_strlen(str), str);
 */
 // ------ TEST FT_: memset  ------
-
+/*
 	char str_1[] = "this is test string 1";
 	char str_2[] = "this is test string 1";
 
@@ -56,11 +57,12 @@ int	main(void)
 	if (strcmp(dst1,dst2))
 	printf("Test:		%s\nControl:	%s\n", dst1, dst2);
 
+*/
 // ------ TEST FT_: strncmp  ------
 
-	char str_3[] = "adklsfa;d";
-	char str_4[] = "aldksaf;";
-	int size = 20;
+	char str_3[] = "Tripouille";
+	char str_4[] = "TripouilleX";
+	int size = 42;
 
 	if (ft_strncmp(str_3, str_4, size) != strncmp(str_3, str_4, size))
 		printf("Test:		%d\nControl:	%d\n", ft_strncmp(str_3, str_4, size), strncmp(str_3, str_4, size));
@@ -134,20 +136,23 @@ char *str = "hello !";
 */
 // ------ TEST FT_: strtrim ------
 /*
-	char in1[] = "\n\n\n\t\t\tiiiiiii\t    Deze String is eerst     \n\n\n\n\t\t\tiiii\t\t";
+	char in1[] = "";
 	char *dst10;
 
-	dst10 = ft_strtrim(in1, " \n\ti");
+	dst10 = ft_strtrim(in1, "\t\n");
 
 	printf("Test:	%s\n", dst10);
 	free (dst10);
 */
 //------- TEST FT_: lstnew -------
-
+/*
 	int *d;
 
 	*d = 3;
 	printf("int:	%d\n", ft_lstnew((void *)d));
+*/
+
+
 
 	printf("\n--==-- TEST COMPLETE --==--\n");
 	return(0);

@@ -3,8 +3,7 @@
 CC = gcc
 CFL = -Wall -Werror -Wextra
 NAME = libft.a
-
-OBJ = $(subst .c,.o, $(SRC))
+OBJ_DIR = ./OBJ
 
 SRC =	ft_isalpha.c \
 		ft_isdigit.c \
@@ -42,9 +41,10 @@ SRC =	ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
-SRC_BONUS =	ft_lstnew.c \
+SRC_BONUS =	$(SRC) \
+			ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -54,31 +54,35 @@ SRC_BONUS =	ft_lstnew.c \
 			ft_lstiter.c \
 			ft_lstmap.c
 
+OBJ_BONUS = $(addprefix $(OBJ_DIR)/,$(SRC_BONUS:.c=.o))
+
+ifdef ADD_BONUS
+	OBJ += $(OBJ_BONUS)
+endif
+
+
 # Make Commands:
-all: $(NAME)
+all: $(NAME) 
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $^
 
-bonus: $(NAME)($(OBJ_BONUS))
-#	ar rcs $(NAME) $(OBJ) $(OBJ_BONUS)
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(@D)
+	$(CC) $(CFL) -c $< -o $@
 
-%.o: %.c
-	$(CC) $(CFL) -c $^
+bonus: $(OBJ) $(OBJ_BONUS)
+	ar rcs $(NAME) $^ 
 
-clean:
-	rm $(OBJ) $(NAME)
+clean: 
+	@mkdir -p $(OBJ_DIR)
+	rm -r $(OBJ_DIR)
 
-fclean:
-	rm -f $(OBJ) $(NAME)
+fclean: clean
+	rm -f $(NAME) 
 
 bclean:
 	rm -f $(OBJ) $(OBJ_BONUS) $(NAME)
+
 re: fclean all
 
-clear:
-	clear
-
-test: clear $(OBJ) $(NAME)
-	$(CC) $(CFL) main.c$(OBJ)
-	./a.out

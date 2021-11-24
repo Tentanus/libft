@@ -6,9 +6,6 @@ int	ft_toupper(int c)
 
 	b = c;
 	if (b >= 'a' && b <= 'z')
-	{
-		b -= 32;
-		return (b);
-	}
+		return (b - 32);
 	return (c);
 }

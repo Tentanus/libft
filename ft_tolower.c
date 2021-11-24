@@ -6,9 +6,6 @@ int	ft_tolower(int c)
 
 	b = c;
 	if (b >= 'A' && b <= 'Z')
-	{
-		b += 32;
-		return (b);
-	}
+		return (b + 32);
 	return (c);
 }
