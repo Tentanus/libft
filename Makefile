@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: mweverli <marvin@codam.nl>                   +#+                      #
+#                                                    +#+                       #
+#    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
+#    Updated: 2021/12/10 10:37:12 by mweverli      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
 # VAR
 
 CC = gcc
@@ -27,6 +38,7 @@ SRC =	ft_isalpha.c \
 		ft_memcmp.c \
 		ft_strnstr.c \
 		ft_atoi.c \
+		\
 		ft_calloc.c \
 		ft_strdup.c \
 		\
@@ -36,6 +48,7 @@ SRC =	ft_isalpha.c \
 		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
+		ft_striteri.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
@@ -57,7 +70,7 @@ SRC_BONUS =	$(SRC) \
 OBJ_BONUS = $(addprefix $(OBJ_DIR)/,$(SRC_BONUS:.c=.o))
 
 # Make Commands:
-all: $(NAME) 
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $^
@@ -67,14 +80,13 @@ $(OBJ_DIR)/%.o: %.c
 	$(CC) $(CFL) -c $< -o $@
 
 bonus: $(OBJ) $(OBJ_BONUS)
-	ar rcs $(NAME) $^ 
+	ar rcs $(NAME) $^
 
-clean: 
+clean:
 	@mkdir -p $(OBJ_DIR)
 	rm -r $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME) 
+	rm -f $(NAME)
 
 re: fclean all
-
