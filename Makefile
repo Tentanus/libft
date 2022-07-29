@@ -6,7 +6,7 @@
 #    By: mweverli <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/07/29 14:59:30 by mweverli      ########   odam.nl          #
+#    Updated: 2022/07/29 15:07:29 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 # VARIABLES
@@ -75,6 +75,7 @@ CC		:=	gcc
 CFL		:=	-Wall -Werror -Wextra
 
 # RECIPIES:
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -95,3 +96,7 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
+
+.DEFAULT_GOAL := all
