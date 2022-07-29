@@ -6,15 +6,17 @@
 #    By: mweverli <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2021/12/10 10:37:12 by mweverli      ########   odam.nl          #
+#    Updated: 2022/07/29 14:59:30 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
-# VAR
+# VARIABLES
 
-CC = gcc
-CFL = -Wall -Werror -Wextra
-NAME = libft.a
-OBJ_DIR = ./OBJ
+NAME		:=	libft.a
+OBJ_DIR		:=	./OBJ
+SRC_DIR		:=	./src
+HEA_DIR		:=	./include
+
+HEADER		:=	-I $(HEA_DIR)
 
 SRC =	ft_isalpha.c \
 		ft_isdigit.c \
@@ -69,15 +71,18 @@ SRC_BONUS =	$(SRC) \
 
 OBJ_BONUS = $(addprefix $(OBJ_DIR)/,$(SRC_BONUS:.c=.o))
 
-# Make Commands:
+CC		:=	gcc
+CFL		:=	-Wall -Werror -Wextra
+
+# RECIPIES:
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $^
 
-$(OBJ_DIR)/%.o: %.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFL) -c $< -o $@
+	$(CC) $(CFL) -c $< -o $@ $(HEADER)
 
 bonus: $(OBJ) $(OBJ_BONUS)
 	ar rcs $(NAME) $^
