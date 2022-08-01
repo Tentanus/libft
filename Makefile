@@ -6,7 +6,7 @@
 #    By: mweverli <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/07/29 15:07:29 by mweverli      ########   odam.nl          #
+#    Updated: 2022/08/01 14:11:57 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 # VARIABLES
@@ -80,10 +80,12 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $^
+	@echo "$(GREEN) $(BOLD)libft.a archive ready$(RESET)"
+
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFL) -c $< -o $@ $(HEADER)
+	@$(CC) $(CFL) -c $< -o $@ $(HEADER)
 
 bonus: $(OBJ) $(OBJ_BONUS)
 	ar rcs $(NAME) $^
@@ -100,3 +102,7 @@ re: fclean all
 .PHONY: all clean fclean re
 
 .DEFAULT_GOAL := all
+
+BOLD	:= \033[1m
+GREEN	:= \033[32;1m
+RESET	:= \033[0m
