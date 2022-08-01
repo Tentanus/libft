@@ -6,7 +6,7 @@
 #    By: mweverli <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/08/01 14:29:07 by mweverli      ########   odam.nl          #
+#    Updated: 2022/08/01 14:36:54 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 # VARIABLES
@@ -79,7 +79,6 @@ CFL		:=	-Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(GREEN)$(BOLD)Compiling Libft$(RESET)"
 	@ar rcs $(NAME) $^
 	@echo "$(GREEN)$(BOLD)Libft Compiled$(RESET)"
 
@@ -99,6 +98,8 @@ clean:
 fclean: clean
 	@echo "$(RED)$(BOLD)Cleaning Libft Archive$(RESET)"
 	@rm -f $(NAME)
+
+# MISC
 
 re: fclean all
 
