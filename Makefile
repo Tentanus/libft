@@ -6,7 +6,7 @@
 #    By: mweverli <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/08/01 14:36:54 by mweverli      ########   odam.nl          #
+#    Updated: 2022/08/01 15:24:16 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 # VARIABLES
@@ -92,11 +92,10 @@ bonus: $(OBJ) $(OBJ_BONUS)
 
 clean:
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(RED)$(BOLD)Cleaning Libft OBJ$(RESET)"
+	@echo "$(RED)$(BOLD)Cleaning Libft$(RESET)"
 	@rm -r $(OBJ_DIR)
 
 fclean: clean
-	@echo "$(RED)$(BOLD)Cleaning Libft Archive$(RESET)"
 	@rm -f $(NAME)
 
 # MISC
