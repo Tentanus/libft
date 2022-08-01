@@ -6,7 +6,7 @@
 #    By: mweverli <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/08/01 15:24:16 by mweverli      ########   odam.nl          #
+#    Updated: 2022/08/01 21:20:44 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 # VARIABLES
@@ -80,11 +80,12 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
-	@echo "$(GREEN)$(BOLD)Libft Compiled$(RESET)"
+	@echo "$(GREEN)$(BOLD)FINISHED COMPILING: $(NAME)$(RESET)"
 
+$(OBJ_DIR):
+	@mkdir -p $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(@D)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFL) -c $< -o $@ $(HEADER)
 
 bonus: $(OBJ) $(OBJ_BONUS)
