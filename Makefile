@@ -6,7 +6,7 @@
 #    By: mweverli <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/08/01 14:11:57 by mweverli      ########   odam.nl          #
+#    Updated: 2022/08/01 14:29:07 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 # VARIABLES
@@ -79,8 +79,9 @@ CFL		:=	-Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $^
-	@echo "$(GREEN) $(BOLD)libft.a archive ready$(RESET)"
+	@echo "$(GREEN)$(BOLD)Compiling Libft$(RESET)"
+	@ar rcs $(NAME) $^
+	@echo "$(GREEN)$(BOLD)Libft Compiled$(RESET)"
 
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -92,10 +93,12 @@ bonus: $(OBJ) $(OBJ_BONUS)
 
 clean:
 	@mkdir -p $(OBJ_DIR)
-	rm -r $(OBJ_DIR)
+	@echo "$(RED)$(BOLD)Cleaning Libft OBJ$(RESET)"
+	@rm -r $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "$(RED)$(BOLD)Cleaning Libft Archive$(RESET)"
+	@rm -f $(NAME)
 
 re: fclean all
 
@@ -105,4 +108,5 @@ re: fclean all
 
 BOLD	:= \033[1m
 GREEN	:= \033[32;1m
+RED		:= \033[31;1m
 RESET	:= \033[0m
