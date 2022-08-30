@@ -53,6 +53,9 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
+//		Libft Addition Functions
+char		*ft_strjoin_fs1(char const *s1, char const *s2);
+
 //		Bonus Functions
 typedef struct s_list
 {
