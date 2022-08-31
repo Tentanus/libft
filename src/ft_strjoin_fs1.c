@@ -6,13 +6,13 @@
 /*   By: mweverli <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:30:21 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/12/13 11:30:23 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/08/31 13:37:57 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin_fs1(char const *s1, char const *s2)
+char	*ft_strjoin_fs1(char *s1, char const *s2)
 {
 	char	*dst;
 	size_t	ls1;
