@@ -6,7 +6,7 @@
 /*   By: mweverli <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/09/05 15:29:49 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/09/15 15:25:42 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void		ft_putnbr_fd(int n, int fd);
 char		*ft_strjoin_fs1(char *s1, char const *s2);
 int			ft_ishex(int c);
 int			ft_htoi(const char *str);
+int			ft_abs(int a);
 
 //		Bonus Functions
 typedef struct s_list
