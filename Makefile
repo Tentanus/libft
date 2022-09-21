@@ -9,22 +9,102 @@
 #    Updated: 2022/08/31 13:39:47 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
-# VARIABLES
+
+#========================================#
+#=========  GENERAL VARIABLES:  =========#
+#========================================#
 
 NAME		:=	libft.a
-OBJ_DIR		:=	./OBJ
+OBJ_DIR		:=	./obj
 SRC_DIR		:=	./src
-HEA_DIR		:=	./include
+INC_DIR		:=	./include
 
-HEADER		:=	-I $(HEA_DIR)
+HEADER		:=	-I $(INC_DIR)
 
-SRC = $(shell ls ./src)
-OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+#=========  SOURCE  VARIABLES:  =========#
+
+SRC_ASC			:=	ascii/ft_isalnum.c \
+					ascii/ft_isalpha.c \
+					ascii/ft_isascii.c \
+					ascii/ft_isdigit.c \
+					ascii/ft_ishex.c \
+					ascii/ft_isprintf.c
+
+SRC_CON			:=	convert/ft_atoi.c \
+					convert/ft_htoi.c \
+					convert/ft_itoa.c \
+					convert/ft_tolower.c \
+					convert/ft_toupper.c
+
+SRC_LST			:=	list/ft_lstadd_back.c \
+					list/ft_lstclear.c \
+					list/ft_lstiter.c \
+					list/ft_lstmap.c  \
+					list/ft_lstsize.c \
+					list/ft_lstadd_front.c \
+					list/ft_lstdelone.c \
+					list/ft_lstlast.c \
+					list/ft_lstnew.c
+
+SRC_MAT			:=	math/ft_abs.c
+
+SRC_MEM			:=	mem/ft_bzero.c \
+					mem/ft_calloc.c \
+					mem/ft_memchr.c \
+					mem/ft_memcmp.c \
+					mem/ft_memcpy.c \
+					mem/ft_memmove.c \
+					mem/ft_memset.c
+
+SRC_PUT			:=	put/ft_putchar_fd.c \
+					put/ft_putendl_fd.c \
+					put/ft_putnbr_fd.c \
+					put/ft_putstr_fd.c
+
+SRC_STR			:=	string/ft_split.c \
+					string/ft_strdup.c \
+					string/ft_strjoin.c \
+					string/ft_strlcat.c \
+					string/ft_strlen.c \
+					string/ft_strncmp.c \
+					string/ft_strrchr.c \
+					string/ft_substr.c \
+					string/ft_strchr.c \
+					string/ft_striteri.c \
+					string/ft_strjoin_fs1.c \
+					string/ft_strlcpy.c \
+					string/ft_strmapi.c \
+					string/ft_strnstr.c \
+					string/ft_strtrim.c
+
+SRC				:=	$(SRC_ASC) \
+					$(SRC_CON) \
+					$(SRC_LST) \
+					$(SRC_MAT) \
+					$(SRC_MEM) \
+					$(SRC_PUT) \
+					$(SRC_STR)
+
+OBJ				:=	$(patsubst %.c,$(OBJ_DIR)/%.o,$(notdir $(SRC)))
+
+f: for 
+	$(OBJ)
+
+for: 
+
+#========================================#
+#=========      UTENSILS:       =========#
+#========================================#
+
+RM		:=	rm -f
+MAKE	:=	$(MAKE) --no-printf-directory
 
 CC		:=	gcc
 CFL		:=	-Wall -Werror -Wextra
 
-# RECIPIES:
+#========================================#
+#=========      RECIPIES:       =========#
+#========================================#
 
 all: $(NAME)
 
@@ -46,14 +126,12 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
-# MISC
-
-force: f
-	$(SRC)
-
-f:
-
 re: fclean all
+
+#========================================#
+#=========    MISCELLANEOUS:    =========#
+#========================================#
+
 
 .PHONY: all clean fclean re
 
