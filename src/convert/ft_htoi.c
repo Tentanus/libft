@@ -10,31 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+int	ft_ishex(int c);
 
 int	ft_htoi(const char *str)
 {
-	size_t			i;
 	int				sign;
 	unsigned long	ret;
 
-	i = 0;
 	ret = 0;
 	sign = 1;
-	while (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
+	while (*str == '-' || *str == '+')
+		if (*str++ == '-')
 			sign *= -1;
-	if (str[i] == '0' && (str[i + 1] == 'x' || str[i + 1] == 'X'))
-		i += 2;
-	while (ft_ishex(str[i]))
+	if (*str == '0' && (*(str + 1) == 'x' || *(str + 1) == 'X'))
+		str += 2;
+	while (ft_ishex(*str))
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			ret = ret * 16 + (str[i] - '0');
-		if (str[i] >= 'a' && str[i] <= 'f')
-			ret = ret * 16 + (10 + str[i] - 'a');
-		if (str[i] >= 'A' && str[i] <= 'F')
-			ret = ret * 16 + (10 + str[i] - 'A');
-		i++;
+		if (*str >= '0' && *str <= '9')
+			ret = ret * 16 + (*str - '0');
+		if (*str >= 'a' && *str <= 'f')
+			ret = ret * 16 + (10 + *str - 'a');
+		if (*str >= 'A' && *str <= 'F')
+			ret = ret * 16 + (10 + *str - 'A');
+		str++;
 	}
 	return ((int) sign * ret);
 }

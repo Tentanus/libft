@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_memcpy.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:29:24 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/12/13 11:29:26 by mweverli      ########   odam.nl         */
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	const char	*s;
 
 	if (!src && !dst)
-		return (0);
+		return (NULL);
 	d = dst;
 	s = src;
 	while (n > 0)

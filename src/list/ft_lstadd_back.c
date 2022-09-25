@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_lstadd_back.c                                   :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/20 14:23:39 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/12/12 15:16:41 by mweverli      ########   odam.nl         */

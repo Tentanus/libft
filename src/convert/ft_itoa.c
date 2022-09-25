@@ -40,19 +40,18 @@ char	*ft_itoa(int n)
 	size_n = ft_inlen(nb);
 	str = malloc((size_n + 1) * sizeof(char));
 	if (!str)
-		return (0);
-	str[size_n] = '\0';
-	size_n--;
-	if (nb < 0)
+		return (NULL);
+	str[size_n--] = '\0';
+	if (nb == 0)
+		str[0] = '0';
+	else if (nb < 0)
 	{
 		str[0] = '-';
 		nb *= -1;
 	}
-	else if (nb == 0)
-		str[0] = '0';
 	while (nb > 0 && size_n >= 0)
 	{
-		str[size_n] = 48 + (nb % 10);
+		str[size_n] = '0' + (nb % 10);
 		nb /= 10;
 		size_n--;
 	}

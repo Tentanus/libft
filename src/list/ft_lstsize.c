@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_lstsize.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/20 13:17:52 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/11/22 12:04:05 by mweverli      ########   odam.nl         */

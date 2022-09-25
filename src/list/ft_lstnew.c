@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_lstnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/16 10:44:41 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/12/13 15:13:29 by mweverli      ########   odam.nl         */
