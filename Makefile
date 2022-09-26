@@ -6,7 +6,7 @@
 #    By: mweverli <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/08/31 13:39:47 by mweverli      ########   odam.nl          #
+#    Updated: 2022/09/26 15:52:50 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ SRC_LST		:=	list/ft_lstadd_back.c \
 				list/ft_lstlast.c \
 				list/ft_lstnew.c
 
-SRC_MAT		:=	math/ft_abs.c
+SRC_MAT		:=	math/ft_abs.c \
+				math/ft_ternary.c
 
 SRC_MEM		:=	mem/ft_bzero.c \
 				mem/ft_calloc.c \
