@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/09/15 15:25:42 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/09/26 15:45:53 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int			ft_lstsize(t_list *lst);
 //		Functions:	MATH
 
 int			ft_abs(int a);
+int			ft_ternary(int bol, int t, int f);
 
 //		Functions:	MEMORY
 
