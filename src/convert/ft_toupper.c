@@ -6,10 +6,9 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:32:22 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/12/13 11:32:25 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/09/26 17:16:45 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_toupper(int c)
 {
