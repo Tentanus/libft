@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_strlcat.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:30:43 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/12/13 11:30:44 by mweverli      ########   odam.nl         */
@@ -14,21 +14,24 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	ldst;
-	size_t	lsrc;
+	size_t	len_dst;
+	size_t	len_src;
 	size_t	i;
 
-	ldst = ft_strlen(dst);
-	lsrc = ft_strlen(src);
+	if (!dst || !src)
+		return (0);
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
 	i = 0;
-	if (ldst >= dstsize)
-		return (lsrc + dstsize);
-	while (src[i] != '\0' && (dstsize - ldst - 1) > 0)
+	if (len_dst >= dstsize)
+		return (len_src + dstsize);
+	while (src[i] != '\0' && (dstsize - len_dst - 1) > 0)
 	{
-		dst[ldst + i] = src[i];
+		dst[len_dst + i] = src[i];
 		i++;
 		dstsize--;
 	}
-	dst[ldst + i] = '\0';
-	return (ldst + lsrc);
+	if (dstsize - len_dst) 
+		dst[len_dst + i] = '\0';
+	return (len_dst + len_src);
 }

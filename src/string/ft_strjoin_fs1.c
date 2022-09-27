@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_strjoin.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:30:21 by mweverli      #+#    #+#                 */
 /*   Updated: 2022/08/31 13:37:57 by mweverli      ########   odam.nl         */
@@ -18,11 +18,13 @@ char	*ft_strjoin_fs1(char *s1, char const *s2)
 	size_t	ls1;
 	size_t	ls2;
 
+	if (!s1 || !s2)
+		return (NULL);
 	ls1 = ft_strlen(s1);
 	ls2 = ft_strlen(s2);
-	dst = (char *)malloc(sizeof(char) * (ls1 + ls2 + 1));
+	dst = malloc(sizeof(char) * (ls1 + ls2 + 1));
 	if (!dst)
-		return (0);
+		return (NULL);
 	ft_strlcpy(dst, s1, (ls1 + 1));
 	ft_strlcat(dst, s2, (ls1 + ls2 + 1));
 	free(s1);

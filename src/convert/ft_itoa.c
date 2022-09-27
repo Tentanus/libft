@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_itoa.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/02 11:28:46 by mweverli      #+#    #+#                 */
 /*   Updated: 2022/02/25 17:52:14 by mweverli      ########   odam.nl         */

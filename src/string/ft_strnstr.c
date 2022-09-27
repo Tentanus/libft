@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_strnstr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/22 12:55:36 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/11/25 17:14:24 by mweverli      ########   odam.nl         */
@@ -29,5 +29,5 @@ char	*ft_strnstr(const char *hst, const char *ndl, size_t len)
 			return ((char *) hst + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_memchr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:29:09 by mweverli      #+#    #+#                 */
 /*   Updated: 2022/03/12 15:08:32 by mweverli      ########   odam.nl         */

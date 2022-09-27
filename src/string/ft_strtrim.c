@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_strtrim.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/24 20:39:45 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/12/12 16:51:31 by mweverli      ########   odam.nl         */
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*dst;
 
+	if (!s1)
+		return (NULL);
 	begin = 0;
 	while (ft_strchr(set, s1[begin]))
 		begin++;

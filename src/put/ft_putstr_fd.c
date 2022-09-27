@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_putstr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/08 13:22:57 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/11/14 20:09:46 by mweverli      ########   odam.nl         */

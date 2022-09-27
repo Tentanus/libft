@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:31:56 by mweverli      #+#    #+#                 */
 /*   Updated: 2022/02/16 11:16:27 by mweverli      ########   odam.nl         */
@@ -14,19 +14,19 @@
 
 char	*ft_substr(const char *src, unsigned int start, size_t len)
 {
-	size_t	slen;
+	size_t	len_src;
 	char	*dst;
 
-	slen = ft_strlen(src);
-	if (!(src))
-		return (0);
-	if (len > slen)
-		len = (slen);
-	if ((size_t) start >= slen)
+	if (!src)
+		return (NULL);
+	len_src = ft_strlen(src);
+	if ((size_t) start >= len_src)
 		return (ft_strdup(""));
+	if (len > len_src)
+		len = len_src;
 	dst = (char *) malloc(sizeof(char) * (len + 1));
 	if (!(dst))
-		return (0);
+		return (NULL);
 	ft_memcpy(dst, &(src[start]), len);
 	dst[len] = '\0';
 	return (dst);

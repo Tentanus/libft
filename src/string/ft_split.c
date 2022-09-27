@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_split.c                                         :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/01 12:03:46 by mweverli      #+#    #+#                 */
 /*   Updated: 2022/02/16 11:15:51 by mweverli      ########   odam.nl         */
@@ -54,7 +54,7 @@ static char	**ft_remove(char **arr, size_t j)
 		free(arr[j]);
 	}
 	free(arr);
-	return (0);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -67,18 +67,18 @@ char	**ft_split(char const *s, char c)
 	wc = ft_word_count(s, c);
 	arr = malloc((wc + 1) * sizeof(char *));
 	if (!arr)
-		return (0);
+		return (NULL);
 	while (*s != '\0' && j < wc)
 	{
 		while (*s == c)
 			s++;
-		arr[j] = ft_make_word(((char *)&*s), c);
+		arr[j] = ft_make_word(((char *) s), c);
 		if (!arr[j])
 			return (ft_remove(arr, j));
 		j++;
 		while (*s != c && *s != '\0')
 			s++;
 	}
-	arr[j] = 0;
+	arr[j] = NULL;
 	return (arr);
 }

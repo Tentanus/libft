@@ -15,6 +15,7 @@
 #========================================#
 
 NAME		:=	libft.a
+NAME_BASE	:=	$(basename $(NAME))
 OBJ_DIR		:=	obj
 SRC_DIR		:=	src
 INC_DIR		:=	include
@@ -23,68 +24,75 @@ HEADER		:=	-I $(INC_DIR)
 
 #=========  SOURCE  VARIABLES:  =========#
 
-SRC_ASC		:=	ascii/ft_isalnum.c \
-				ascii/ft_isalpha.c \
-				ascii/ft_isascii.c \
-				ascii/ft_isdigit.c \
-				ascii/ft_ishex.c \
-				ascii/ft_isprint.c
+SRC_DIR_ASC	:=	/ascii
+SRC_ASC		:=	ft_isalnum.c \
+				ft_isalpha.c \
+				ft_isascii.c \
+				ft_isdigit.c \
+				ft_ishex.c \
+				ft_isprint.c
 
-SRC_CON		:=	convert/ft_atoi.c \
-				convert/ft_htoi.c \
-				convert/ft_itoa.c \
-				convert/ft_tolower.c \
-				convert/ft_toupper.c
+SRC_DIR_CON	:=	/convert
+SRC_CON		:=	ft_atoi.c \
+				ft_htoi.c \
+				ft_itoa.c \
+				ft_tolower.c \
+				ft_toupper.c
 
-SRC_LST		:=	list/ft_lstadd_back.c \
-				list/ft_lstclear.c \
-				list/ft_lstiter.c \
-				list/ft_lstmap.c  \
-				list/ft_lstsize.c \
-				list/ft_lstadd_front.c \
-				list/ft_lstdelone.c \
-				list/ft_lstlast.c \
-				list/ft_lstnew.c
+SRC_DIR_LST	:=	/list
+SRC_LST		:=	ft_lstadd_back.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c  \
+				ft_lstsize.c \
+				ft_lstadd_front.c \
+				ft_lstdelone.c \
+				ft_lstlast.c \
+				ft_lstnew.c
 
-SRC_MAT		:=	math/ft_abs.c \
-				math/ft_ternary.c
+SRC_DIR_MAT	:=	/math
+SRC_MAT		:=	ft_abs.c \
+				ft_ternary.c
 
-SRC_MEM		:=	mem/ft_bzero.c \
-				mem/ft_calloc.c \
-				mem/ft_memchr.c \
-				mem/ft_memcmp.c \
-				mem/ft_memcpy.c \
-				mem/ft_memmove.c \
-				mem/ft_memset.c
+SRC_DIR_MEM	:=	/mem
+SRC_MEM		:=	ft_bzero.c \
+				ft_calloc.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_memset.c
 
-SRC_PUT		:=	put/ft_putchar_fd.c \
-				put/ft_putendl_fd.c \
-				put/ft_putnbr_fd.c \
-				put/ft_putstr_fd.c
+SRC_DIR_PUT	:=	/put
+SRC_PUT		:=	ft_putchar_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_putstr_fd.c
 
-SRC_STR		:=	string/ft_split.c \
-				string/ft_strdup.c \
-				string/ft_strjoin.c \
-				string/ft_strlcat.c \
-				string/ft_strlen.c \
-				string/ft_strncmp.c \
-				string/ft_strrchr.c \
-				string/ft_substr.c \
-				string/ft_strchr.c \
-				string/ft_striteri.c \
-				string/ft_strjoin_fs1.c \
-				string/ft_strlcpy.c \
-				string/ft_strmapi.c \
-				string/ft_strnstr.c \
-				string/ft_strtrim.c
+SRC_DIR_STR	:=	/string
+SRC_STR		:=	ft_split.c \
+				ft_strdup.c \
+				ft_strjoin.c \
+				ft_strlcat.c \
+				ft_strlen.c \
+				ft_strncmp.c \
+				ft_strrchr.c \
+				ft_substr.c \
+				ft_strchr.c \
+				ft_striteri.c \
+				ft_strjoin_fs1.c \
+				ft_strlcpy.c \
+				ft_strmapi.c \
+				ft_strnstr.c \
+				ft_strtrim.c
 
-SRC_DIR_DIR	:=	$(SRC_ASC) \
-				$(SRC_CON) \
-				$(SRC_LST) \
-				$(SRC_MAT) \
-				$(SRC_MEM) \
-				$(SRC_PUT) \
-				$(SRC_STR)
+SRC_DIR_DIR	:=	$(addprefix $(SRC_DIR_ASC)/,$(SRC_ASC)) \
+				$(addprefix $(SRC_DIR_CON)/,$(SRC_CON)) \
+				$(addprefix $(SRC_DIR_LST)/,$(SRC_LST)) \
+				$(addprefix $(SRC_DIR_MAT)/,$(SRC_MAT)) \
+				$(addprefix $(SRC_DIR_MEM)/,$(SRC_MEM)) \
+				$(addprefix $(SRC_DIR_PUT)/,$(SRC_PUT)) \
+				$(addprefix $(SRC_DIR_STR)/,$(SRC_STR))
 
 SRC			:=	$(addprefix $(SRC_DIR)/,$(SRC_DIR_DIR))
 
@@ -117,7 +125,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/*/%.c | $(OBJ_DIR)
 
 clean:
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(RED)$(BOLD)========== Cleaning Libft ==========$(RESET)"
+	@echo "$(RED)$(BOLD)========== Cleaning $(NAME_BASE) ==========$(RESET)"
 	@$(RM) -r $(OBJ_DIR)
 
 fclean: clean

@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_calloc.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/01 12:03:57 by mweverli      #+#    #+#                 */
 /*   Updated: 2022/02/25 17:48:56 by mweverli      ########   odam.nl         */

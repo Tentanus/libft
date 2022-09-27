@@ -3,7 +3,7 @@
 /*                                                        ::::::::            */
 /*   ft_striteri.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <marvin@codam.nl>                   +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/08 11:34:12 by mweverli      #+#    #+#                 */
 /*   Updated: 2021/12/13 11:30:10 by mweverli      ########   odam.nl         */
