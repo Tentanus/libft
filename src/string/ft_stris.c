@@ -14,9 +14,9 @@ int	ft_stris(const char *str, int (*is_f)(int))
 {
 	int	index;
 
-	if (!str || !f)
+	if (!str || !is_f)
 		return (0);
-	i = 0;
+	index = 0;
 	while (str[index] != '\0')
 	{
 		if (!is_f((int)str[index]))
