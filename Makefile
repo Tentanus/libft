@@ -3,7 +3,7 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: mweverli <marvin@codam.nl>                   +#+                      #
+#    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
 #    Updated: 2022/09/26 15:52:50 by mweverli      ########   odam.nl          #
@@ -16,9 +16,9 @@
 
 NAME		:=	libft.a
 NAME_BASE	:=	$(basename $(NAME))
-OBJ_DIR		:=	obj
-SRC_DIR		:=	src
-INC_DIR		:=	include
+SRC_DIR		:=	./src
+OBJ_DIR		:=	./obj
+INC_DIR		:=	./include
 
 HEADER		:=	-I $(INC_DIR)
 
@@ -71,20 +71,21 @@ SRC_PUT		:=	ft_putchar_fd.c \
 
 SRC_DIR_STR	:=	/string
 SRC_STR		:=	ft_split.c \
-				ft_strdup.c \
-				ft_strjoin.c \
-				ft_strlcat.c \
-				ft_strlen.c \
-				ft_strncmp.c \
-				ft_strrchr.c \
-				ft_substr.c \
 				ft_strchr.c \
+				ft_strdup.c \
+				ft_stris.c \
 				ft_striteri.c \
+				ft_strjoin.c \
 				ft_strjoin_fs1.c \
+				ft_strlcat.c \
 				ft_strlcpy.c \
+				ft_strlen.c \
 				ft_strmapi.c \
+				ft_strncmp.c \
 				ft_strnstr.c \
-				ft_strtrim.c
+				ft_strrchr.c \
+				ft_strtrim.c \
+				ft_substr.c
 
 SRC_DIR_DIR	:=	$(addprefix $(SRC_DIR_ASC)/,$(SRC_ASC)) \
 				$(addprefix $(SRC_DIR_CON)/,$(SRC_CON)) \
@@ -105,7 +106,11 @@ OBJ			:=	$(addprefix $(OBJ_DIR)/,$(notdir $(SRC:.c=.o)))
 RM			:=	rm -f
 
 CC			:=	gcc
+ifdef DEBUG
+CFL			:=	-Wall -Werror -Wextra -g
+else
 CFL			:=	-Wall -Werror -Wextra
+endif
 
 #========================================#
 #=========      RECIPIES:       =========#

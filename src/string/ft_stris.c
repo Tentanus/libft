@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strmapi.c                                       :+:    :+:            */
+/*   ft_stris.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/08 10:42:08 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/12/02 19:00:45 by mweverli      ########   odam.nl         */
+/*   Created: 2022/10/04 15:28:59 by mweverli      #+#    #+#                 */
+/*   Updated: 2021/10/04 15:29:01 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_stris(const char *str, int (*is_f)(int))
 {
-	int		i;
-	char	*ret;
-	char	*sc;
+	int	index;
 
-	if (!s || !f)
-		return (NULL);
-	sc = (char *)s;
+	if (!str || !f)
+		return (0);
 	i = 0;
-	ret = malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (!ret)
-		return (NULL);
-	while (sc[i] != '\0')
+	while (str[index] != '\0')
 	{
-		ret[i] = f(i, sc[i]);
-		i++;
+		if (!is_f((int)str[index]))
+			return (0);
+		index++;
 	}
-	ret[i] = '\0';
-	return (ret);
+	return (1);
 }
