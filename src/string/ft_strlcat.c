@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:30:43 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/12/13 11:30:44 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/09/28 18:58:08 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		i++;
 		dstsize--;
 	}
-	if (dstsize - len_dst) 
+	if (dstsize - len_dst)
 		dst[len_dst + i] = '\0';
 	return (len_dst + len_src);
 }
