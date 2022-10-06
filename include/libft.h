@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/09/26 15:45:53 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/10/06 16:17:30 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t n);
 void		*ft_memset(void *b, int c, size_t len);
+
+//		Functions:	PRINT
+
+int			ft_printf(const char *str, ...);
 
 //		Functions:	PUT
 
