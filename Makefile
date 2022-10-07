@@ -6,7 +6,7 @@
 #    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/10/07 14:41:18 by mweverli      ########   odam.nl          #
+#    Updated: 2022/10/07 15:14:19 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -135,7 +135,7 @@ $(OBJ_DIR):
 	@mkdir -p $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/*/%.c | $(OBJ_DIR)
-	$(CC) $(CFL) -c $< -o $@ $(HEADER)
+	@$(CC) $(CFL) -c $< -o $@ $(HEADER)
 
 clean:
 	@mkdir -p $(OBJ_DIR)
