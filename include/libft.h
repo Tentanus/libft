@@ -6,13 +6,15 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/10/06 16:17:30 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/10/10 17:58:25 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include	<errno.h>
+# include	<limits.h>
 # include	<stdlib.h>
 # include	<unistd.h>
 # include	<stddef.h>
@@ -33,10 +35,12 @@ int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_ishex(int c);
 int			ft_isprint(int c);
+int			ft_isspace(int c);
 
 //		Functions:	CONVERT
 
 int			ft_atoi(const char *str);
+long		ft_atol(const char *str);
 int			ft_htoi(const char *str);
 char		*ft_itoa(int n);
 int			ft_toupper(int c);

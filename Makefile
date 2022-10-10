@@ -6,7 +6,7 @@
 #    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/10/07 15:14:19 by mweverli      ########   odam.nl          #
+#    Updated: 2022/10/10 17:58:27 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,12 @@ SRC_ASC			:=	ft_isalnum.c \
 					ft_isascii.c \
 					ft_isdigit.c \
 					ft_ishex.c \
-					ft_isprint.c
+					ft_isprint.c \
+					ft_isspace.c
 
 SRC_DIR_CON		:=	/convert
 SRC_CON			:=	ft_atoi.c \
+					ft_atol.c \
 					ft_htoi.c \
 					ft_itoa.c \
 					ft_tolower.c \

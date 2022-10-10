@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_isspace.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
+/*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/12/13 11:27:37 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/10/10 17:58:30 by mweverli      ########   odam.nl         */
+/*   Created: 2022/10/10 16:44:28 by mweverli      #+#    #+#                 */
+/*   Updated: 2022/10/10 16:49:52 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
-int	ft_atoi(const char *str)
+int	ft_isspace(int c)
 {
-	long	n;
-
-	n = ft_atol(str);
-	if (n > INT_MIN && n < INT_MAX)
-		return ((int)n);
-	errno = 34;
+	if (c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\v')
+		return (1);
 	return (0);
 }
