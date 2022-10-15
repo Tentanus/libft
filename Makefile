@@ -67,6 +67,7 @@ SRC_MEM			:=	ft_bzero.c \
 
 SRC_DIR_PRINT	:=	/printf
 SRC_PRINT		:=	ft_printf.c \
+					ft_printf_bin.c \
 					ft_printf_dec.c \
 					ft_printf_hex.c \
 					ft_printf_mis.c \

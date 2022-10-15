@@ -47,6 +47,10 @@ int				base_len_dec(long n);
 int				put_int(va_list list);
 int				put_uint(va_list list);
 
+//				FT_PRINTF_BIN
+int				put_bin_16(va_list list);
+int				put_bin_32(va_list list);
+
 //				FT_PRINTF_MIS
 int				put_prc(va_list list);
 
