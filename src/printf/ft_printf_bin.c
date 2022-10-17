@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/53 23:59:14 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/10/53 23:59:14 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/10/17 12:19:55 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	put_bin_32(va_list list)
 {
 	int		num;
 	int		i;
-	char	str[32];
+	char	str[33];
 
 	num = va_arg(list, unsigned int);
 	i = 31;
@@ -34,7 +34,7 @@ int	put_bin_16(va_list list)
 {
 	int		num;
 	int		i;
-	char	str[16];
+	char	str[17];
 
 	num = va_arg(list, unsigned int);
 	i = 15;
