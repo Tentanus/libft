@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 16:41:28 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/10/10 17:58:31 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/10/17 22:59:35 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ long	ft_atol(const char *str)
 	while (ft_isspace(*str))
 		str++;
 	if (*str == '-' || *str == '+')
+	{
 		if (*str == '-')
 		{
 			sign = -1;
 			str++;
 		}
+	}
 	while (ft_isdigit(*str))
 	{
 		res = res * 10 + (*str - '0');
