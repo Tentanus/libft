@@ -142,7 +142,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/*/%.c | $(OBJ_DIR)
 
 clean:
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(RED)$(BOLD)========== Cleaning $(NAME_BASE) ==========$(RESET)"
+	@echo "$(RED)$(BOLD)========= $(NAME) CLEANING =========$(RESET)"
 	@$(RM) -r $(OBJ_DIR)
 
 fclean: clean
