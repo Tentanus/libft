@@ -6,7 +6,7 @@
 #    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/10/10 17:58:27 by mweverli      ########   odam.nl          #
+#    Updated: 2022/11/02 15:37:08 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC_CON			:=	ft_atoi.c \
 					ft_atol.c \
 					ft_htoi.c \
 					ft_itoa.c \
+					ft_itoh.c \
 					ft_tolower.c \
 					ft_toupper.c
 

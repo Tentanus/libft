@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/02 15:21:37 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/11/02 15:28:11 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/11/02 15:37:45 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_itoh(unsigned long n)
 	int		b_len;
 
 	set = "0123456789abcdef\0";
-	b_len = hex_lenght(n);
+	b_len = hex_length(n);
 	str = malloc((b_len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);

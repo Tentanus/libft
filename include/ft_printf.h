@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/02 16:15:30 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/11/02 15:25:05 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/11/02 15:36:29 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <libft.h>
 
 //DEFINITIONS
 
@@ -55,8 +56,6 @@ int				put_bin_32(va_list list);
 int				put_prc(va_list list);
 
 //				FT_PRINTF_UTILS_01
-char			*ft_itoa(int n);
-char			*ft_itoh(unsigned long n);
 int				write_till(const char **str);
 void			ft_strtoupper(char *str);
 
