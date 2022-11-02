@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/06/07 14:26:14 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/07/09 15:38:04 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/11/02 13:18:16 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	put_int(va_list list)
 	char	*str;
 
 	num = va_arg(list, int);
-	str = ft_itoa((long) num);
+	str = ft_itoa(num);
 	if (!str)
 		return (0);
 	num = base_len_dec((long) num);

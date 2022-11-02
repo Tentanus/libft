@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/10/10 17:58:25 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/11/02 15:25:31 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int			ft_atoi(const char *str);
 long		ft_atol(const char *str);
 int			ft_htoi(const char *str);
 char		*ft_itoa(int n);
+char		*ft_itoh(unsigned long n);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 

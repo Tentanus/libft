@@ -1,59 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   ft_itoh.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
+/*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/02 11:28:46 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/11/02 13:18:14 by mweverli      ########   odam.nl         */
+/*   Created: 2022/07/07 18:15:37 by mweverli      #+#    #+#                 */
+/*   Updated: 2022/11/02 15:22:23 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_inlen(long n)
+int	hex_length(unsigned long n)
 {
 	int	len;
 
 	len = 0;
-	if (n <= 0)
-	{
-		n *= -1;
+	if (n == 0)
 		len++;
-	}
-	while (n > 0)
+	while (n)
 	{
-		n /= 10;
+		n /= 16;
 		len++;
 	}
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoh(unsigned long n)
 {
-	int		size_n;
-	long	nb;
+	char	*set;
 	char	*str;
+	int		b_len;
 
-	nb = n;
-	size_n = ft_inlen(nb);
-	str = malloc((size_n + 1) * sizeof(char));
+	set = "0123456789abcdef\0";
+	b_len = hex_lenght(n);
+	str = malloc((b_len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	str[size_n--] = '\0';
-	if (nb == 0)
+	str[b_len--] = '\0';
+	if (n == 0)
 		str[0] = '0';
-	else if (nb < 0)
+	while (n)
 	{
-		str[0] = '-';
-		nb *= -1;
-	}
-	while (nb > 0 && size_n >= 0)
-	{
-		str[size_n] = '0' + (nb % 10);
-		nb /= 10;
-		size_n--;
+		str[b_len--] = set[n % 16];
+		n /= 16;
 	}
 	return (str);
 }
