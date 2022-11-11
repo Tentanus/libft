@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/08 13:22:57 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/11/14 20:09:46 by mweverli      ########   odam.nl         */
+/*   Updated: 2022/11/11 14:26:19 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr_fd(const char *s, int fd)
 {
 	size_t	i;
 
-	if (!s || fd)
+	if (!s)
 		return ;
 	i = ft_strlen(s);
 	write(fd, s, i);
