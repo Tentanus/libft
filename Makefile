@@ -6,7 +6,7 @@
 #    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2022/11/02 15:37:08 by mweverli      ########   odam.nl          #
+#    Updated: 2023/01/31 12:29:00 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,11 +119,7 @@ OBJ				:=	$(addprefix $(OBJ_DIR)/,$(notdir $(SRC:.c=.o)))
 RM			:=	rm -f
 
 CC			:=	gcc
-ifdef DEBUG
-CFL			:=	-Wall -Werror -Wextra -g
-else
-CFL			:=	-Wall -Werror -Wextra
-endif
+CFL			:=	-Wall -Werror -Wextra $(if DEBUG, -g)
 
 #========================================#
 #=========      RECIPIES:       =========#
@@ -140,9 +136,9 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/*/%.c | $(OBJ_DIR)
 	@$(CC) $(CFL) -c $< -o $@ $(HEADER)
+	@echo "$(CYAN)$(BOLD)LIBFT: $@$(RESET)"
 
 clean:
-	@mkdir -p $(OBJ_DIR)
 	@echo "$(RED)$(BOLD)========= $(NAME) CLEANING =========$(RESET)"
 	@$(RM) -r $(OBJ_DIR)
 
@@ -162,4 +158,5 @@ re: fclean all
 BOLD	:= \033[1m
 GREEN	:= \033[32;1m
 RED		:= \033[31;1m
+CYAN	:= \033[36:1m
 RESET	:= \033[0m

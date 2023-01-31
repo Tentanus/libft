@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:30:52 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/12/13 11:30:54 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/01/31 12:27:28 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = src[i];
 		i++;
 	}
-	if (dstsize != 0)
-		dst[i] = '\0';
+	dst[i] = '\0';
 	if (src[i] == '\0')
 		return (i);
 	return (len_src);
