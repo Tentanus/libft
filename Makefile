@@ -6,7 +6,7 @@
 #    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2023/01/31 12:29:00 by mweverli      ########   odam.nl          #
+#    Updated: 2023/02/10 15:44:23 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,9 @@ SRC_PUT			:=	ft_putchar_fd.c \
 					ft_putstr_fd.c
 
 SRC_DIR_STR	:=	/string
-SRC_STR		:=	ft_split.c \
+SRC_STR		:=	ft_skip_whitespace.c \
+				ft_skip_char.c \
+				ft_split.c \
 				ft_strchr.c \
 				ft_strdup.c \
 				ft_stris.c \
