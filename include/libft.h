@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/02/10 15:44:22 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/02/10 19:32:09 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char *hst, const char *ndl, size_t len);
 char		*ft_strrchr(const char *s, int c);
-char		*ft_strtrim(char const *s1, char cont *set);
+char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(const char *src, unsigned int start, size_t len);
 
 #endif
