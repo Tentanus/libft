@@ -6,7 +6,7 @@
 #    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2023/02/10 15:44:23 by mweverli      ########   odam.nl          #
+#    Updated: 2023/02/16 22:36:48 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,11 @@
 #========================================#
 
 NAME		:=	libft.a
-NAME_BASE	:=	$(basename $(NAME))
 SRC_DIR		:=	./src
 OBJ_DIR		:=	./obj
 INC_DIR		:=	./include
 
-HEADER		:=	-I $(INC_DIR)
+INCLUDE		:=	-I $(INC_DIR)
 
 #=========  SOURCE  VARIABLES:  =========#
 
@@ -101,7 +100,7 @@ SRC_STR		:=	ft_skip_whitespace.c \
 				ft_strtrim.c \
 				ft_substr.c
 
-SRC_DIR_DIR		:=	$(addprefix $(SRC_DIR_ASC)/,$(SRC_ASC)) \
+SRC				:=	$(addprefix $(SRC_DIR_ASC)/,$(SRC_ASC)) \
 					$(addprefix $(SRC_DIR_CON)/,$(SRC_CON)) \
 					$(addprefix $(SRC_DIR_LST)/,$(SRC_LST)) \
 					$(addprefix $(SRC_DIR_MAT)/,$(SRC_MAT)) \
@@ -110,18 +109,20 @@ SRC_DIR_DIR		:=	$(addprefix $(SRC_DIR_ASC)/,$(SRC_ASC)) \
 					$(addprefix $(SRC_DIR_PUT)/,$(SRC_PUT)) \
 					$(addprefix $(SRC_DIR_STR)/,$(SRC_STR))
 
-SRC				:=	$(addprefix $(SRC_DIR)/,$(SRC_DIR_DIR))
+SRC				:=	$(SRC:%=$(SRC_DIR)%)
 
-OBJ				:=	$(addprefix $(OBJ_DIR)/,$(notdir $(SRC:.c=.o)))
+OBJ				:=	$(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
+
+OBJ_SUB_DIRS	:=	$(sort $(dir $(OBJ)))
 
 #========================================#
 #=========      UTENSILS:       =========#
 #========================================#
 
-RM			:=	rm -f
+RM			:=	rm -rfv
 
 CC			:=	gcc
-CFL			:=	-Wall -Werror -Wextra $(if DEBUG, -g)
+CFL			:=	-Wall -Werror -Wextra$(if $(DEBUG), -g)
 
 #========================================#
 #=========      RECIPIES:       =========#
@@ -131,21 +132,26 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
-	@echo "$(GREEN)$(BOLD)========= $(NAME) COMPILED =========$(RESET)"
+	@echo "ar rcs libft.a *.o"
 
-$(OBJ_DIR):
+$(OBJ): | $(OBJ_SUB_DIRS)
+
+$(OBJ_SUB_DIRS):
 	@mkdir -p $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/*/%.c | $(OBJ_DIR)
-	@$(CC) $(CFL) -c $< -o $@ $(HEADER)
-	@echo "$(CYAN)$(BOLD)LIBFT: $@$(RESET)"
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFL) $(INCLUDE) -c $< -o $@
 
 clean:
-	@echo "$(RED)$(BOLD)========= $(NAME) CLEANING =========$(RESET)"
-	@$(RM) -r $(OBJ_DIR)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
-	@rm -f $(NAME)
+	$(RM) $(NAME)
+
+debug:
+	@$(MAKE) DEBUG=1
+
+rebug: fclean debug
 
 re: fclean all
 
