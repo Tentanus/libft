@@ -6,7 +6,7 @@
 #    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2023/02/16 22:36:48 by mweverli      ########   odam.nl          #
+#    Updated: 2023/02/17 13:52:47 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,7 +134,7 @@ $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
 	@echo "ar rcs libft.a *.o"
 
-$(OBJ): | $(OBJ_SUB_DIRS)
+$(OBJ): $(OBJ_SUB_DIRS)
 
 $(OBJ_SUB_DIRS):
 	@mkdir -p $@
