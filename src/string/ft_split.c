@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/01 12:03:46 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/02/28 19:08:20 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/02/28 19:19:40 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static size_t	ft_word_count(char const *s, char c)
 	size_t	wc;
 	size_t	i;
 
+	if (!s)
+		return (0);
 	wc = 0;
 	i = 0;
 	while (s[i] != '\0')
