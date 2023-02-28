@@ -6,9 +6,20 @@
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 16:44:28 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/10/10 16:49:52 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/02/28 20:42:57 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*	ft_isspace
+ *		c	Character to be checked
+ *
+ * Function:
+ * Will check if c is a whitespace character on the ASCII table, returning TRUE/FALSE
+ *
+ * RETURN VALUES:
+ * [TRUE  / 1]	(c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\v')
+ * [FALSE / 0]	Any other value.
+ */
 
 int	ft_isspace(int c)
 {
