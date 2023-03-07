@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/02/10 19:32:09 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/03/07 19:46:15 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@
 # include	<stdlib.h>
 # include	<unistd.h>
 # include	<stddef.h>
+
+//	MACROS
+
+#ifndef INT_MIN
+# define INT_MIN -2147483648
+#endif
+
+#ifndef INT_MAX
+# define INT_MAX 2147483647
+#endif
 
 //	STRUCTURES
 typedef struct s_list

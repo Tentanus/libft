@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strjoin.c                                       :+:    :+:            */
+/*   ft_strjoin_fs1.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:30:21 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/08/31 13:37:57 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/03/07 19:46:13 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char	*ft_strjoin_fs1(char *s1, char const *s2)
 	size_t	ls1;
 	size_t	ls2;
 
-	if (!s1 || !s2)
+	if (!s1)
 		return (NULL);
+	if (!s2)
+		return (s1);
 	ls1 = ft_strlen(s1);
 	ls2 = ft_strlen(s2);
 	dst = malloc(sizeof(char) * (ls1 + ls2 + 1));
