@@ -6,7 +6,7 @@
 #    By: mweverli <mweverli@codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/11/29 13:21:58 by mweverli      #+#    #+#                  #
-#    Updated: 2023/02/17 13:52:47 by mweverli      ########   odam.nl          #
+#    Updated: 2023/03/08 15:39:46 by mweverli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,14 +132,12 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
-	@echo "ar rcs libft.a *.o"
-
-$(OBJ): $(OBJ_SUB_DIRS)
+	@echo "ar rcs $(NAME) $(OBJ_DIR)/*/*.o"
 
 $(OBJ_SUB_DIRS):
 	@mkdir -p $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_SUB_DIRS)
 	$(CC) $(CFL) $(INCLUDE) -c $< -o $@
 
 clean:
@@ -153,13 +151,22 @@ debug:
 
 rebug: fclean debug
 
-re: fclean all
+re: fclean
+	@$(MAKE) all
+
+test: all
+	$(CC) $(CFL) $(INCLUDE) $(NAME) main.c -o test.out
+
+tclean:
+	$(RM) test.out
+
+gclean: clean fclean tclean
 
 #========================================#
 #=========    MISCELLANEOUS:    =========#
 #========================================#
 
-.PHONY: all clean fclean re
+.PHONY: all clean debug fclean gclean rebug re tclean test
 
 .DEFAULT_GOAL := all
 

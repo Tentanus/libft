@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/03/07 19:46:15 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/03/08 15:50:58 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,6 @@
 # include	<stddef.h>
 
 //	MACROS
-
-#ifndef INT_MIN
-# define INT_MIN -2147483648
-#endif
-
-#ifndef INT_MAX
-# define INT_MAX 2147483647
-#endif
 
 //	STRUCTURES
 typedef struct s_list
@@ -49,7 +41,7 @@ int			ft_isspace(int c);
 
 //		Functions:	CONVERT
 
-int			ft_atoi(const char *str);
+int32_t		ft_atoi(const char *str);
 long		ft_atol(const char *str);
 int			ft_htoi(const char *str);
 char		*ft_itoa(int n);

@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/05 14:12:46 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/02/28 20:38:50 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/03/08 15:50:10 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
  *		c	Character to be checked
  *
  * Function:
- * Will check if c is a hexadecimal character on the ASCII table, returning TRUE/FALSE
+ * Will check if c is a hexadecimal character on the ASCII table
+ * returning TRUE/FALSE
  *
  * RETURN VALUES:
  * [TRUE  / 1]	('0' <= c <= '9' || 'a' <= c <= 'f' || 'A' <= c <= 'F')

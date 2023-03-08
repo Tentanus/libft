@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 16:44:28 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/02/28 20:42:57 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/03/08 15:50:55 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
  *		c	Character to be checked
  *
  * Function:
- * Will check if c is a whitespace character on the ASCII table, returning TRUE/FALSE
+ * Will check if c is a whitespace character on the ASCII table
+ * returning TRUE/FALSE
  *
  * RETURN VALUES:
  * [TRUE  / 1]	(c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\v')
