@@ -89,6 +89,7 @@ void		ft_putstr_fd(const char *s, int fd);
 
 //		Functions:	STRING
 
+void		ft_free_split(char **arr);
 int			ft_skip_char(const char *str, const char c);
 int			ft_skip_whitespace(const char *str);
 char		**ft_split(char const *s, char c);
