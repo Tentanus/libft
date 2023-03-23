@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/01 12:03:46 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/02/28 19:19:40 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/03/23 15:18:15 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,6 @@ char	**ft_split(char const *s, char c)
 
 	j = 0;
 	wc = ft_word_count(s, c);
-	if (wc == 0)
-		return (NULL);
 	arr = malloc((wc + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
