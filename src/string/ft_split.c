@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/01 12:03:46 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/03/23 15:18:15 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/03/24 09:27:41 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ char	**ft_split(char const *s, char c)
 	arr = malloc((wc + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	while (*s != '\0' && j < wc)
+	arr[wc] = NULL;
+	while (j < wc && *s != '\0')
 	{
 		while (*s == c)
 			s++;
@@ -78,6 +79,5 @@ char	**ft_split(char const *s, char c)
 		while (*s != c && *s != '\0')
 			s++;
 	}
-	arr[j] = NULL;
 	return (arr);
 }
