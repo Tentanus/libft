@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/03/08 15:50:58 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/03/31 17:49:33 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int			ft_isdigit(int c);
 int			ft_ishex(int c);
 int			ft_isprint(int c);
 int			ft_isspace(int c);
+int			ft_isupper(int c);
 
 //		Functions:	CONVERT
 
