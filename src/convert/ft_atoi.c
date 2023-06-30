@@ -6,7 +6,7 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:27:37 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/03/08 15:49:36 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/06/30 14:40:48 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@
  *		str		string literal containing a number
  *
  * Function:
- * ft_atoi will take in a string at the start of a number and returns
- * an integer value. if anything goes wrong it returns a 0.
+ * ft_atoi will take in a string, skip whitespace, take in a '-' or '+' and only
+ * interpret a number. It will return the number read from the string, if it is
+ * an integer value. If the number is outside the INT range, the number returns
+ * "0"..
  *
  * RETURN VALUES:
  * [INT]	Values contained in the str including 0.
@@ -31,7 +33,7 @@ int32_t	ft_atoi(const char *str)
 
 	sign = 1;
 	res = 0;
-	while (*str == ' ')
+	while (ft_isspace(*str))
 		str++;
 	if (*str == '-' || *str == '+')
 	{

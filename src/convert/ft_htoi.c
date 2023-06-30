@@ -6,11 +6,26 @@
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/05 14:05:56 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/11/02 15:23:09 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/06/30 14:43:01 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_ishex(int c);
+#include <libft.h>
+
+/*	ft_htoi
+ *		str		string literal containing a HEX-number
+ *
+ * Function:
+ * ft_htoi will take in a string, skip whitespace, take in a '-' or '+' and only
+ * interpret a number. It will return the number read from the string, if it is
+ * an integer value. If the number is outside the INT range, the number returns
+ * "0"..
+ *
+ * RETURN VALUES:
+ * [INT]	Values contained in the str including 0.
+ * [0]		if str contains "0" or if something went wrong.
+ */
+
 
 int	ft_htoi(const char *str)
 {
@@ -19,6 +34,8 @@ int	ft_htoi(const char *str)
 
 	ret = 0;
 	sign = 1;
+	while (ft_isspace(*str))
+		str++;
 	while (*str == '-' || *str == '+')
 		if (*str++ == '-')
 			sign *= -1;
