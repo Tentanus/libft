@@ -6,11 +6,23 @@
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/02 11:28:46 by mweverli      #+#    #+#                 */
-/*   Updated: 2022/11/02 13:18:14 by mweverli      ########   odam.nl         */
+/*   Updated: 2023/06/30 18:44:54 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*	ft_itoa
+ *		n		an integer
+ *
+ * Function:
+ * ft_itoa will take an integer and convert it into a string containing the
+ * numbers of n.
+ *
+ * RETURN VALUES:
+ * [CHAR *]		a null-terminated string containing n.
+ * [NULL]		if anything goes wrong during allocation.
+ */
 
 static int	ft_inlen(long n)
 {
