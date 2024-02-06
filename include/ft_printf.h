@@ -55,7 +55,7 @@ int				put_bin_32(va_list list);
 //				FT_PRINTF_MIS
 int				put_prc(va_list list);
 
-//				FT_PRINTF_UTILS_01
+//				FT_PRINTF_UTILS
 int				write_till(const char **str);
 void			ft_strtoupper(char *str);
 

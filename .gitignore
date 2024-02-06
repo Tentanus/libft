@@ -1,4 +1,11 @@
-main.c
+# Building
 /obj
 libft.a
 
+# Testing
+main.c
+test.out
+
+# Usability
+compile_commands.json
+.cache/

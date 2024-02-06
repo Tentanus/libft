@@ -81,26 +81,27 @@ SRC_PUT			:=	ft_putchar_fd.c \
 					ft_putnbr_fd.c \
 					ft_putstr_fd.c
 
-SRC_DIR_STR	:=	/string
-SRC_STR		:=	ft_free_split.c \
-				ft_skip_whitespace.c \
-				ft_skip_char.c \
-				ft_split.c \
-				ft_strchr.c \
-				ft_strdup.c \
-				ft_stris.c \
-				ft_striteri.c \
-				ft_strjoin.c \
-				ft_strjoin_fs1.c \
-				ft_strlcat.c \
-				ft_strlcpy.c \
-				ft_strlen.c \
-				ft_strmapi.c \
-				ft_strncmp.c \
-				ft_strnstr.c \
-				ft_strrchr.c \
-				ft_strtrim.c \
-				ft_substr.c
+SRC_DIR_STR		:=	/string
+SRC_STR			:=	ft_free_split.c \
+					ft_skip_whitespace.c \
+					ft_skip_char.c \
+					ft_split.c \
+					ft_strchr.c \
+					ft_strdup.c \
+					ft_stris.c \
+					ft_striteri.c \
+					ft_strjoin.c \
+					ft_strjoin_fs1.c \
+					ft_strlcat.c \
+					ft_strlcpy.c \
+					ft_strlen.c \
+					ft_strmapi.c \
+					ft_strncmp.c \
+					ft_strnstr.c \
+					ft_strrchr.c \
+					ft_strsubset.c \
+					ft_strtrim.c \
+					ft_substr.c
 
 SRC				:=	$(addprefix $(SRC_DIR_ASC)/,$(SRC_ASC)) \
 					$(addprefix $(SRC_DIR_CON)/,$(SRC_CON)) \
@@ -124,22 +125,26 @@ OBJ_SUB_DIRS	:=	$(sort $(dir $(OBJ)))
 RM			:=	rm -rfv
 
 CC			:=	gcc
-CFL			:=	-Wall -Werror -Wextra$(if $(DEBUG), -g)
+CFL			:=	-Wall -Werror -Wextra
+
+ifdef DEBUG
+CFL				+= -g
+endif
 
 #========================================#
 #=========      RECIPIES:       =========#
 #========================================#
 
-all: $(NAME)
+all: $(OBJ_SUB_DIRS) $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
 	@echo "ar rcs $(NAME) $(OBJ_DIR)/*/*.o"
 
 $(OBJ_SUB_DIRS):
-	@mkdir -p $@
+	mkdir -p $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_SUB_DIRS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFL) $(INCLUDE) -c $< -o $@
 
 clean:
@@ -157,18 +162,13 @@ re: fclean
 	@$(MAKE) all
 
 test: all
-	$(CC) $(CFL) $(INCLUDE) $(NAME) main.c -o test.out
-
-tclean:
-	$(RM) test.out
-
-gclean: clean fclean tclean
+	$(CC) $(CFL) $(INCLUDE) main.c $(NAME) -o test.out
 
 #========================================#
 #=========    MISCELLANEOUS:    =========#
 #========================================#
 
-.PHONY: all clean debug fclean gclean rebug re tclean test
+.PHONY: all clean debug fclean rebug re test
 
 .DEFAULT_GOAL := all
 
