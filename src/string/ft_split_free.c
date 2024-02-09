@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_skip_char.c                                     :+:    :+:            */
+/*   ft_split_free.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/10 15:41:20 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/02/28 19:08:40 by mweverli      ########   odam.nl         */
+/*   Created: 2023/03/21 15:41:20 by mweverli      #+#    #+#                 */
+/*   Updated: 2023/03/21 19:08:40 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include <libft.h>
 
-int	ft_skip_char(const char *str, const char c)
+#include "libft.h"
+
+void	ft_split_free(char **arr)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i] == c)
-		i++;
-	return (i);
+	while (arr[i] != NULL)
+		free(arr[i++]);
+	free(arr);
+	return ;
 }

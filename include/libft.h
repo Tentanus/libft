@@ -90,10 +90,9 @@ void		ft_putstr_fd(const char *s, int fd);
 
 //		Functions:	STRING
 
-void		ft_free_split(char **arr);
-int			ft_skip_char(const char *str, const char c);
-int			ft_skip_whitespace(const char *str);
 char		**ft_split(char const *s, char c);
+void		ft_split_free(char **arr);
+
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *src);
 int			ft_stris(char *str, int (*is_f)(int));
@@ -108,6 +107,9 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strnstr(const char *hst, const char *ndl, size_t len);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strsubset(const char *str, const char *set);
+size_t		ft_strskipchar(const char *str, const char c);
+size_t		ft_strskipis(const char *str, int (*is_f)(int));
+char		*ft_strskipset(const char *str, const char *set);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(const char *src, unsigned int start, size_t len);
 

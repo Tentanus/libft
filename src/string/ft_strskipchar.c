@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strsubset.c                                     :+:    :+:            */
+/*   ft_skip_char.c                                     :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <mweverli@student.codam.nl>         +#+                     */
+/*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/02/06 21:03:17 by mweverli      #+#    #+#                 */
-/*   Updated: 2024/02/09 19:53:15 by mweverli      ########   odam.nl         */
+/*   Created: 2023/02/10 15:41:20 by mweverli      #+#    #+#                 */
+/*   Updated: 2023/02/28 19:08:40 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsubset(const char *str, const char *set)
+size_t ft_skip_char(const char *str, const char c)
 {
-	size_t i = 0;
+	size_t i;
 
-	while (str[i])
-	{
-		if (!ft_strchr(set, str[i]))
-			return ((char *)str + i);
+	i = 0;
+	while (str[i] == c)
 		i++;
-	}
-	return (NULL);
+	return (i);
 }

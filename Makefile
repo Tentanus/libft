@@ -82,10 +82,9 @@ SRC_PUT			:=	ft_putchar_fd.c \
 					ft_putstr_fd.c
 
 SRC_DIR_STR		:=	/string
-SRC_STR			:=	ft_free_split.c \
-					ft_skip_whitespace.c \
-					ft_skip_char.c \
-					ft_split.c \
+SRC_STR			:=	ft_split.c \
+					ft_split_free.c \
+					\
 					ft_strchr.c \
 					ft_strdup.c \
 					ft_stris.c \
@@ -99,6 +98,9 @@ SRC_STR			:=	ft_free_split.c \
 					ft_strncmp.c \
 					ft_strnstr.c \
 					ft_strrchr.c \
+					ft_strskipchar.c \
+					ft_strskipis.c \
+					ft_strskipset.c \
 					ft_strsubset.c \
 					ft_strtrim.c \
 					ft_substr.c

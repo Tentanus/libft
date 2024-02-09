@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   skip_whitespace.c                                  :+:    :+:            */
+/*   ft_strskipis.c                                     :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <mweverli@student.codam.n>          +#+                     */
+/*   By: mweverli <mweverli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/10 15:19:30 by mweverli      #+#    #+#                 */
 /*   Updated: 2023/02/10 15:21:49 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <libft.h>
 
-int	ft_skip_whitespace(const char *str)
+size_t ft_strskipis(const char *str, int (*is_f)(int)) 
 {
-	int	i;
+	size_t i;
 
+	if (!str || !is_f)
+		return (0);
 	i = 0;
-	while (ft_isspace(str[i]))
+	while (is_f(str[i]))
 		i++;
 	return (i);
 }
