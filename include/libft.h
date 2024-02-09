@@ -36,6 +36,7 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_ishex(int c);
+int			ft_ispath(int c);
 int			ft_isprint(int c);
 int			ft_isspace(int c);
 int			ft_isupper(int c);

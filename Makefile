@@ -24,85 +24,94 @@ INCLUDE		:=	-I $(INC_DIR)
 #=========  SOURCE  VARIABLES:  =========#
 
 SRC_DIR_ASC		:=	/ascii
-SRC_ASC			:=	ft_isalnum.c \
-					ft_isalpha.c \
-					ft_isascii.c \
-					ft_isdigit.c \
-					ft_ishex.c \
-					ft_isprint.c \
-					ft_isspace.c \
+SRC_ASC			:=	\
+					ft_isalnum.c		\
+					ft_isalpha.c		\
+					ft_isascii.c		\
+					ft_isdigit.c		\
+					ft_ishex.c			\
+					ft_ispath.c			\
+					ft_isprint.c		\
+					ft_isspace.c		\
 					ft_isupper.c
 
 SRC_DIR_CON		:=	/convert
-SRC_CON			:=	ft_atoi.c \
-					ft_atol.c \
-					ft_htoi.c \
-					ft_itoa.c \
-					ft_itoh.c \
-					ft_tolower.c \
+SRC_CON			:=	\
+					ft_atoi.c			\
+					ft_atol.c			\
+					ft_htoi.c			\
+					ft_itoa.c			\
+					ft_itoh.c			\
+					ft_tolower.c		\
 					ft_toupper.c
 
 SRC_DIR_LST		:=	/list
-SRC_LST			:=	ft_lstadd_back.c \
-					ft_lstclear.c \
-					ft_lstiter.c \
-					ft_lstmap.c  \
-					ft_lstsize.c \
-					ft_lstadd_front.c \
-					ft_lstdelone.c \
-					ft_lstlast.c \
+SRC_LST			:=	\
+					ft_lstadd_back.c	\
+					ft_lstclear.c		\
+					ft_lstiter.c		\
+					ft_lstmap.c 		\
+					ft_lstsize.c		\
+					ft_lstadd_front.c	\
+					ft_lstdelone.c		\
+					ft_lstlast.c		\
 					ft_lstnew.c
 
 SRC_DIR_MAT		:=	/math
-SRC_MAT			:=	ft_abs.c \
+SRC_MAT			:=	\
+					ft_abs.c			\
 					ft_ternary.c
 
 SRC_DIR_MEM		:=	/mem
-SRC_MEM			:=	ft_bzero.c \
-					ft_calloc.c \
-					ft_memchr.c \
-					ft_memcmp.c \
-					ft_memcpy.c \
-					ft_memmove.c \
+SRC_MEM			:=	\
+					ft_bzero.c			\
+					ft_calloc.c			\
+					ft_memchr.c			\
+					ft_memcmp.c			\
+					ft_memcpy.c			\
+					ft_memmove.c		\
 					ft_memset.c
 
 SRC_DIR_PRINT	:=	/printf
-SRC_PRINT		:=	ft_printf.c \
-					ft_printf_bin.c \
-					ft_printf_dec.c \
-					ft_printf_hex.c \
-					ft_printf_mis.c \
-					ft_printf_str.c \
+SRC_PRINT		:=	\
+					ft_printf.c			\
+					ft_printf_bin.c		\
+					ft_printf_dec.c		\
+					ft_printf_hex.c		\
+					ft_printf_mis.c		\
+					ft_printf_str.c		\
 					ft_printf_utils.c 
 
 SRC_DIR_PUT		:=	/put
-SRC_PUT			:=	ft_putchar_fd.c \
-					ft_putendl_fd.c \
-					ft_putnbr_fd.c \
+SRC_PUT			:=	\
+					ft_putchar_fd.c		\
+					ft_putendl_fd.c		\
+					ft_putnbr_fd.c		\
 					ft_putstr_fd.c
 
 SRC_DIR_STR		:=	/string
-SRC_STR			:=	ft_split.c \
-					ft_split_free.c \
+SRC_STR			:=	\
+					ft_split.c			\
+					ft_split_free.c		\
 					\
-					ft_strchr.c \
-					ft_strdup.c \
-					ft_stris.c \
-					ft_striteri.c \
-					ft_strjoin.c \
-					ft_strjoin_fs1.c \
-					ft_strlcat.c \
-					ft_strlcpy.c \
-					ft_strlen.c \
-					ft_strmapi.c \
-					ft_strncmp.c \
-					ft_strnstr.c \
-					ft_strrchr.c \
-					ft_strskipchar.c \
-					ft_strskipis.c \
-					ft_strskipset.c \
-					ft_strsubset.c \
-					ft_strtrim.c \
+					ft_strchr.c			\
+					ft_strdup.c			\
+					ft_stris.c			\
+					ft_striteri.c		\
+					ft_strjoin.c		\
+					ft_strjoin_fs1.c	\
+					ft_strlcat.c		\
+					ft_strlcpy.c		\
+					ft_strlen.c			\
+					ft_strmapi.c		\
+					ft_strncmp.c		\
+					ft_strnstr.c		\
+					ft_strrchr.c		\
+					ft_strskipchar.c	\
+					ft_strskipis.c		\
+					ft_strskipset.c		\
+					ft_strsubset.c		\
+					ft_strtrim.c		\
 					ft_substr.c
 
 SRC				:=	$(addprefix $(SRC_DIR_ASC)/,$(SRC_ASC)) \
