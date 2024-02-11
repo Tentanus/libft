@@ -17,11 +17,11 @@
  * Will check if c is a valid possibly Path Character, returning TRUE/FALSE
  *
  * RETURN VALUES:
- * [TRUE  / 1]	(character is the following sets: [0 - 9], [a - z], [A - Z], "-./_")
+ * [TRUE  / 1]	(character is the following sets: [0 - 9], [a - z], [A - Z], [-./_] )
  * [FALSE / 0]	Any other value.
  */
 
-int	ft_isalnum(int c)
+int	ft_ispath(int c)
 {
 	if ((c >= '-' && c <= '9') || (c >= 'A' && c <= 'Z')
 		|| (c >= 'a' && c <= 'z') || c == '_' || c == '~')
