@@ -14,14 +14,13 @@
 
 static const t_func	g_func_array[128] = {
 ['c'] = &put_char,
-['b'] = &put_bin_16,
+['b'] = &put_bin,
 ['d'] = &put_int,
 ['i'] = &put_int,
 ['p'] = &put_poi,
 ['s'] = &put_str,
 ['u'] = &put_uint,
 ['x'] = &put_hex,
-['B'] = &put_bin_32,
 ['X'] = &put_hex_up,
 ['%'] = &put_prc
 };

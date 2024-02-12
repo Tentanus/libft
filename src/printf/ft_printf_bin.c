@@ -11,43 +11,73 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdarg.h>
+#include <stdint.h>
+#include <sys/types.h>
 
-int	put_bin_32(va_list list)
+static int put_bin_16(uint16_t num);
+static int put_bin_32(uint32_t num);
+static int put_bin_64(uint64_t num);
+
+int put_bin(va_list list)
 {
-	int		num;
-	int		i;
-	char	str[33];
+	uint64_t num = va_arg(list, uint64_t);
 
-	num = va_arg(list, unsigned int);
-	i = 31;
-	str[32] = '\0';
-	while (i >= 0)
+	if (num <= UINT16_MAX)
+		return (put_bin_16(num));
+	else if (num <= UINT32_MAX)
+		return (put_bin_32(num));
+	else
+		return (put_bin_64(num));
+}
+
+static int put_bin_16(uint16_t num)
+{
+	int i;
+	char str[17];
+
+	i		= 0;
+	str[16] = '\0';
+	while (i < 16)
 	{
-		str[i] = (num % 2) + '0';
-		i--;
-		num /= 2;
+		str[i] = '0' + (num >> (15 - i) & 0x1);
+		if (str[i] == '1')
+			num = num >> 1;
+		i++;
+	}
+	return (write(1, str, 16));
+}
+
+static int put_bin_32(uint32_t num)
+{
+	int i;
+	char str[33];
+
+	i		= 0;
+	str[32] = '\0';
+	while (i < 32)
+	{
+		str[i] = '0' + (num >> (31 - i) & 0x1);
+		if (str[i] == '1')
+			num = num >> 1;
+		i++;
 	}
 	return (write(1, str, 32));
 }
 
-int	put_bin_16(va_list list)
+static int put_bin_64(uint64_t num)
 {
-	int		num;
-	int		i;
-	char	str[17];
+	int i;
+	char str[65];
 
-	num = va_arg(list, unsigned int);
-	i = 15;
-	str[16] = '\0';
-	while (i >= 0)
+	i		= 0;
+	str[64] = '\0';
+	while (i < 64)
 	{
-		str[i] = (num % 2) + '0';
-		i--;
-		num /= 2;
+		str[i] = '0' + (num >> (63 - i) & 0x1);
+		if (str[i] == '1')
+			num = num >> 1;
+		i++;
 	}
-	if (i == 0 && num != 0)
-	{
-		return (write(1, "[USE BIN 32]", 12));
-	}
-	return (write(1, str, 16));
+	return (write(1, str, 64));
 }
