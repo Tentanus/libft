@@ -21,10 +21,11 @@
  * [FALSE / 0]	Any other value.
  */
 
+#include "libft.h"
+
 int	ft_ispath(int c)
 {
-	if ((c >= '-' && c <= '9') || (c >= 'A' && c <= 'Z')
-		|| (c >= 'a' && c <= 'z') || c == '_' || c == '~')
+	if (ft_isalnum(c) || (c >= '-' && c <= '/') || c == '_')
 		return (1);
 	return (0);
 	
