@@ -42,7 +42,7 @@ static int put_bin_16(uint16_t num)
 	{
 		str[i] = '0' + (num >> (15 - i) & 0x1);
 		if (str[i] == '1')
-			num = num >> 1;
+			num -= (0x1 << (15 - i));
 		i++;
 	}
 	return (write(1, str, 16));
@@ -59,7 +59,7 @@ static int put_bin_32(uint32_t num)
 	{
 		str[i] = '0' + (num >> (31 - i) & 0x1);
 		if (str[i] == '1')
-			num = num >> 1;
+			num -= (0x1 << (31 - i));
 		i++;
 	}
 	return (write(1, str, 32));
@@ -76,7 +76,7 @@ static int put_bin_64(uint64_t num)
 	{
 		str[i] = '0' + (num >> (63 - i) & 0x1);
 		if (str[i] == '1')
-			num = num >> 1;
+			num -= (0x1 << (63 - i));
 		i++;
 	}
 	return (write(1, str, 64));
