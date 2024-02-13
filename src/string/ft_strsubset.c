@@ -14,8 +14,9 @@
 
 char	*ft_strsubset(const char *str, const char *set)
 {
-	size_t i = 0;
+	size_t	i;
 
+	i = 0;
 	while (str[i])
 	{
 		if (!ft_strchr(set, str[i]))

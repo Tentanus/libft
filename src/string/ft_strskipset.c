@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-char *ft_strskipset(const char *str, const char *set)
+char	*ft_strskipset(const char *str, const char *set)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
 	{
 		if (!ft_strchr(set, (int) str[i]))
-			break;
+			break ;
 		i++;
 	}
 	if (!str[i])

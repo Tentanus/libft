@@ -1,3 +1,8 @@
+#Libft at this point needs to be kept under 42 Norminette rules. 
+#
+#Dissables Formatting in this direcotry
+DisableFormat: true
+
 # Use the LLVM coding style as the base for this configuration.
 BasedOnStyle: LLVM
 

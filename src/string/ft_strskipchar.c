@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-size_t ft_skip_char(const char *str, const char c)
+size_t	ft_skip_char(const char *str, const char c)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] == c)

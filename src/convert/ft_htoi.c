@@ -26,7 +26,6 @@
  * [0]		if str contains "0" or if something went wrong.
  */
 
-
 int	ft_htoi(const char *str)
 {
 	int		sign;

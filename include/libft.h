@@ -13,11 +13,11 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include	<errno.h>
-# include	<limits.h>
-# include	<stdlib.h>
-# include	<unistd.h>
-# include	<stddef.h>
+# include <errno.h>
+# include <limits.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stddef.h>
 
 //	MACROS
 
@@ -53,8 +53,8 @@ int			ft_tolower(int c);
 
 //		Functions:	LIST
 
-void		ft_lstadd_back(t_list **lst, t_list *);
-void		ft_lstadd_front(t_list **lst, t_list *);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstadd_front(t_list **lst, t_list *new);
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));

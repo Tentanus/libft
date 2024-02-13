@@ -12,9 +12,9 @@
 
 #include <libft.h>
 
-size_t ft_strskipis(const char *str, int (*is_f)(int)) 
+size_t	ft_strskipis(const char *str, int (*is_f)(int))
 {
-	size_t i;
+	size_t	i;
 
 	if (!str || !is_f)
 		return (0);
