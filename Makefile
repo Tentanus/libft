@@ -133,10 +133,15 @@ OBJ_SUB_DIRS	:=	$(sort $(dir $(OBJ)))
 #=========      UTENSILS:       =========#
 #========================================#
 
-RM			:=	rm -rfv
+RM			:=	rm -rf
 
-CC			:=	gcc
-CFL			:=	-Wall -Werror -Wextra
+CC			:=	cc
+CFL			:=	-Wall -Werror -Wextra -Wpedantic
+
+ifdef FSAN
+CFL				+= -fsanitize=address,undefined
+DEBUG=1
+endif
 
 ifdef DEBUG
 CFL				+= -g
@@ -150,7 +155,7 @@ all: $(OBJ_SUB_DIRS) $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $^
-	@echo "ar rcs $(NAME) $(OBJ_DIR)/*/*.o"
+	@echo "$(ORANGE)ar rcs $(NAME)$(RESET) $(notdir $(OBJ))"
 
 $(OBJ_SUB_DIRS):
 	mkdir -p $@
@@ -159,10 +164,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFL) $(INCLUDE) -c $< -o $@
 
 clean:
+	@echo "$(RED)cleaning libft$(RESET)"
 	$(RM) $(OBJ_DIR)
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) test.out
 
 debug:
 	@$(MAKE) DEBUG=1
@@ -184,7 +191,11 @@ test: all
 .DEFAULT_GOAL := all
 
 BOLD	:= \033[1m
-GREEN	:= \033[32;1m
 RED		:= \033[31;1m
+GREEN	:= \033[32;1m
+ORANGE	:= \033[33;1m
+BLUE	:= \033[34;1m
+PURPLE	:= \033[35;1m
 CYAN	:= \033[36:1m
+GRAY	:= \033[37:1m
 RESET	:= \033[0m
