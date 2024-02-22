@@ -41,11 +41,10 @@ int	ft_printf(const char *str, ...)
 			str++;
 			if (*g_func_array[(int) *str] != NULL)
 				len_ret += (*g_func_array[(int) *str++])(arg);
-			else
-			{
+			else if (*str)
 				str++;
-				continue ;
-			}
+			else
+				break ;
 		}
 	}
 	va_end(arg);
