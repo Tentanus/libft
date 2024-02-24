@@ -10,6 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+/**
+ *  @brief
+ *  Will take in a char and if possible return the uppercase counterpart.
+ *
+ *  @param c
+ *  @return int
+ */
+
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')

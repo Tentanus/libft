@@ -148,8 +148,22 @@ char		*ft_itoa(int32_t n);
  *  @return char* or NULL if an error occured.
  */
 char		*ft_itoh(unsigned long n);
-int			ft_toupper(int c);
+/**
+ *  @brief
+ *  Will take in a char and if possible return the lowercase counterpart.
+ *
+ *  @param c
+ *  @return int
+ */
 int			ft_tolower(int c);
+/**
+ *  @brief
+ *  Will take in a char and if possible return the uppercase counterpart.
+ *
+ *  @param c
+ *  @return int
+ */
+int			ft_toupper(int c);
 
 //		Functions:	LIST
 
