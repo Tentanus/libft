@@ -22,7 +22,7 @@
 
 int32_t	ft_abs(int32_t a)
 {
-	int32_t ab;
+	int32_t	ab;
 
 	if (a < 0)
 	{

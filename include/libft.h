@@ -15,7 +15,7 @@
 
 # include <errno.h>
 # include <limits.h>
-#include <stdint.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
@@ -186,7 +186,7 @@ int			ft_lstsize(t_list *lst);
  *  @param a
  *  @return uint32_t
  */
-int32_t	ft_abs(int32_t a);
+int32_t		ft_abs(int32_t a);
 int			ft_ternary(int bol, int t, int f);
 
 //		Functions:	MEMORY
