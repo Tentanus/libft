@@ -127,8 +127,26 @@ long		ft_atol(const char *str);
  *  @param str
  *  @return long or 0 if non INT value;
  */
-int32_t			ft_htoi(const char *str);
-char		*ft_itoa(int n);
+int32_t		ft_htoi(const char *str);
+/**
+ *  @brief
+ *  Will take in an integer, allocate memory and return a string
+ *  containing the decimal number.
+ *
+ *  @warning Allocates Memory, is to be freed.
+ *  @param n
+ *  @return char* or NULL if an error occured.
+ */
+char		*ft_itoa(int32_t n);
+/**
+ *  @brief
+ *  Will take in an unsigned long, allocate memory and return a string
+ *  containing the hexadecimal number.
+ *
+ *  @warning Allocates Memory, is to be freed.
+ *  @param n
+ *  @return char* or NULL if an error occured.
+ */
 char		*ft_itoh(unsigned long n);
 int			ft_toupper(int c);
 int			ft_tolower(int c);

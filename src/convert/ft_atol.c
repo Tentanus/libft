@@ -12,22 +12,14 @@
 
 #include <libft.h>
 
-/*	ft_atol
- *		str		string literal containing a number
+/**
+ *  @brief
+ *  Will take in a char*, skip whitespace, take in '-' or '+' and only
+ *  interpret numbers (ft_isdigit).
  *
- * Function:
- * ft_atol will take in a string, skip whitespace, take in a '-' or '+' and only
- * interpret a number. It will return the number read from the string, if it is
- * an integer value. If the number is outside the LONG range, the number returns
- * "0".
- *
- * RETURN VALUES:
- * [LONG]	Values contained in the str including 0.
- * [0]		if str contains "0" or if something went wrong.
- *
- *
- * WARNING:
- * LONG_MAX & LONG_MIN have not yet been tested.
+ *  @warning Segfaults when given NULL.
+ *  @param str
+ *  @return long or 0 if non INT value;
  */
 
 long	ft_atol(const char *str)

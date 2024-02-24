@@ -12,19 +12,17 @@
 
 #include "libft.h"
 
-/*	ft_itoa
- *		n		an integer
+/**
+ *  @brief
+ *  Will take in an integer, allocate memory and return a string
+ *  containing the decimal number.
  *
- * Function:
- * ft_itoa will take an integer and convert it into a string containing the
- * numbers of n.
- *
- * RETURN VALUES:
- * [CHAR *]		a null-terminated string containing n.
- * [NULL]		if anything goes wrong during allocation.
+ *  @warning Allocates Memory, is to be freed.
+ *  @param n
+ *  @return char* or NULL if an error occured.
  */
 
-static int	ft_inlen(long n)
+static int	ft_intlen(long n)
 {
 	int	len;
 
@@ -42,29 +40,29 @@ static int	ft_inlen(long n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int32_t n)
 {
 	int		size_n;
-	long	nb;
+	long	nbr;
 	char	*str;
 
-	nb = n;
-	size_n = ft_inlen(nb);
+	nbr = n;
+	size_n = ft_intlen(nbr);
 	str = malloc((size_n + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	str[size_n--] = '\0';
-	if (nb == 0)
+	if (nbr == 0)
 		str[0] = '0';
-	else if (nb < 0)
+	else if (nbr < 0)
 	{
 		str[0] = '-';
-		nb *= -1;
+		nbr *= -1;
 	}
-	while (nb > 0 && size_n >= 0)
+	while (nbr > 0 && size_n >= 0)
 	{
-		str[size_n] = '0' + (nb % 10);
-		nb /= 10;
+		str[size_n] = '0' + (nbr % 10);
+		nbr /= 10;
 		size_n--;
 	}
 	return (str);

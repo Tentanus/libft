@@ -12,18 +12,14 @@
 
 #include <libft.h>
 
-/*	ft_htoi
- *		str		string literal containing a hexadecimal number
+/**
+ *  @brief
+ *  Will take in a char*, skip whitespace, take in '-' or '+',
+ *  skip '0x' or '0X' and only interpret hexadecimal (ft_ishex).
  *
- * Function:
- * ft_htoi will take in a string, skip whitespace, take in a '-' or '+' and only
- * interpret a hexadecimal number. It will return the number read from the 
- * string, if it is an integer value. If the number is outside the INT range, 
- * the number returns "0".
- *
- * RETURN VALUES:
- * [INT]	Values contained in the str including 0.
- * [0]		if str contains "0" or if something went wrong.
+ *  @warning Segfaults when given NULL.
+ *  @param str
+ *  @return long or 0 if non INT value;
  */
 
 int	ft_htoi(const char *str)

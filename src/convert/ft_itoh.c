@@ -12,7 +12,17 @@
 
 #include "libft.h"
 
-int	hex_length(unsigned long n)
+/**
+ *  @brief
+ *  Will take in an integer, allocate memory and return a string
+ *  containing the hexadecimal number.
+ *
+ *  @warning Allocates Memory, is to be freed.
+ *  @param n
+ *  @return char* or NULL if an error occured.
+ */
+
+static int	hex_length(unsigned long n)
 {
 	int	len;
 
