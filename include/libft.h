@@ -15,6 +15,7 @@
 
 # include <errno.h>
 # include <limits.h>
+#include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h>
@@ -178,8 +179,14 @@ t_list		*ft_lstnew(void *content);
 int			ft_lstsize(t_list *lst);
 
 //		Functions:	MATH
-
-int			ft_abs(int a);
+/**
+ *  @brief
+ *  Will take a int32_t and if possible return absolute value.
+ *
+ *  @param a
+ *  @return uint32_t
+ */
+int32_t	ft_abs(int32_t a);
 int			ft_ternary(int bol, int t, int f);
 
 //		Functions:	MEMORY

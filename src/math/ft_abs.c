@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_abs.c                                          :+:    :+:            */
+/*   ft_abs.c                                          :+:    :+:             */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
@@ -10,9 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_abs(int a)
+#include "libft.h"
+
+/**
+ *  @brief
+ *  Will take a int32_t and if possible return absolute value.
+ *
+ *  @param a
+ *  @return uint32_t
+ */
+
+int32_t	ft_abs(int32_t a)
 {
+	int32_t ab;
+
 	if (a < 0)
-		a *= -1;
+	{
+		ab = a * -1;
+		return (ab);
+	}
 	return (a);
 }
