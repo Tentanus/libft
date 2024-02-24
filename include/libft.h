@@ -33,35 +33,35 @@ typedef struct s_list
 
 /** @brief
  *  Checks if c is alphanumeric character on the ASCII table:
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c is alphanumeric character, false if not.
  **/
 int			ft_isalnum(int c);
 /** @brief
  *  Checks if c is alphabetic character on the ASCII table:
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c is alphabetic character, false if not.
  **/
 int			ft_isalpha(int c);
 /** @brief
  *  Checks if c is a character on the ASCII table:
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c on the ASCII table, false if not.
  **/
 int			ft_isascii(int c);
 /** @brief
  *  Checks if c is a digit character on the ASCII table:
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c is a digit character, false if not.
  **/
 int			ft_isdigit(int c);
 /** @brief
  *  Checks if c is a hexadecimal character on the ASCII table:
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c is a hexadecimal character, false if not.
  **/
@@ -69,44 +69,65 @@ int			ft_ishex(int c);
 /** @brief
  *  Checks if c is a path character on the ASCII table:
  *  @warning This is a non-POSIX compliant set.
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c is a path character, false if not.
  **/
 int			ft_ispath(int c);
 /** @brief
  *  Checks if c is a printable character on the ASCII table:
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c is a printable character, false if not.
  **/
 int			ft_isprint(int c);
 /** @brief
  *  Checks if c is a whitespace character on the ASCII table:
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c is a whitespace character, false if not.
  **/
 int			ft_isspace(int c);
 /** @brief
  *  Checks if c is a uppercase character on the ASCII table:
- * 
+ *
  *  @param c		Character to be checked.
  *  @return int		True if c is a uppercase character, false if not.
  **/
 int			ft_isupper(int c);
 
 //		Functions:	CONVERT
+
 /**
  *  @brief
- *  Converts the given char * to an integer.
- *  
+ *  Will take in a char*, skip whitespace, take in '-' or '+' and only
+ *  interpret numbers (ft_isdigit).
+ *
+ *  @warning Segfaults when given NULL.
  *  @param str 
- *  @return int32_t 
+ *  @return int32_t or 0 if non INT value;
  */
 int32_t		ft_atoi(const char *str);
+/**
+ *  @brief
+ *  Will take in a char*, skip whitespace, take in '-' or '+' and only
+ *  interpret numbers (ft_isdigit).
+ *
+ *  @warning Segfaults when given NULL.
+ *  @param str
+ *  @return long or 0 if non INT value;
+ */
 long		ft_atol(const char *str);
-int			ft_htoi(const char *str);
+/**
+ *  @brief
+ *  Will take in a char*, skip whitespace, take in '-' or '+',
+ *  skip '0x' or '0X' and only interpret hexadecimal (ft_ishex).
+ *
+ *  @warning Segfaults when given NULL.
+ *  @param str
+ *  @return long or 0 if non INT value;
+ */
+int32_t			ft_htoi(const char *str);
 char		*ft_itoa(int n);
 char		*ft_itoh(unsigned long n);
 int			ft_toupper(int c);
