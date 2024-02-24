@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* This File will be added as a wiki document to the libft.
+ * VScode sucks and i'm unable to get parameterhints to go directly
+ * to the source file, instead of the header. due to this I have to add
+ * documentation in the header file. which is sucky.
+ *
+ * TODO: create wiki/.md file for function overview.
+ */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -31,13 +39,6 @@ typedef struct s_list
 //	FUNCTIONS:
 //		Functions:	ASCII
 
-/** @brief 
- *  checks if c is alphanumeric on the ASCII table:
- * 
- *  @param c		Character to be checked.
- *
- *  @return int		True if c is alphanumeric, false if not.
- **/
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);

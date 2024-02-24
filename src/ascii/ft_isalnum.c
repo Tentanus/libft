@@ -10,16 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	ft_isalnum
- *		c	Character to be checked
+/** @brief
+ *  checks if c is alphanumeric on the ASCII table:
  *
- * Function:
- * Will check if c is alphanumeric on the ASCII table, returning TRUE/FALSE
+ *  @param c		Character to be checked.
  *
- * RETURN VALUES:
- * [TRUE  / 1]	('0' <= c <= '9' || 'a' <= c <= 'z' || 'A' <= c <= 'Z')
- * [FALSE / 0]	Any other value.
- */
+ *  @return int		True if c is alphanumeric, false if not.
+ **/
 
 int	ft_isalnum(int c)
 {
