@@ -10,19 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	ft_ispath
- *		c	Character to be checked
- *
- * Function:
- * Will check if c is a valid possibly Path Character, returning TRUE/FALSE
- *
- * RETURN VALUES:
- * [TRUE  / 1]	Character is the following sets:	[0 - 9], [a - z], 
- * 													[A - Z], [-./_]
- * [FALSE / 0]	Any other value.
- */
-
 #include "libft.h"
+
+/** @brief
+ *  Checks if c is a path character on the ASCII table:
+ *  @warning This is a non-POSIX compliant set.
+ * 
+ *  @param c		Character to be checked.
+ *  @return int		True if c is a path character, false if not.
+ **/
 
 int	ft_ispath(int c)
 {

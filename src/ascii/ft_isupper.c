@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	ft_isupper
- *		c	Character to be checked
- *
- * Function:
- * Will check if c is uppercase on the ASCII table, returning TRUE/FALSE
- *
- * RETURN VALUES:
- * [TRUE  / 1]	('A' <= c <= 'Z')
- * [FALSE / 0]	Any other value.
- */
+#include "libft.h"
+
+/** @brief
+ *  Checks if c is a uppercase character on the ASCII table:
+ * 
+ *  @param c		Character to be checked.
+ *  @return int		True if c is a uppercase character, false if not.
+ **/
 
 int	ft_isupper(int c)
 {

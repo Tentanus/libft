@@ -10,17 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	ft_isprint
- *		c	Character to be checked
- *
- * Function:
- * Will check if c is a printable character on the ASCII table
- * returning TRUE/FALSE
- *
- * RETURN VALUES:
- * [TRUE  / 1]	(' ' <= c <= '~')
- * [FALSE / 0]	Any other value.
- */
+#include "libft.h"
+
+/** @brief
+ *  Checks if c is a printable character on the ASCII table:
+ * 
+ *  @param c		Character to be checked.
+ *  @return int		True if c is a printable character, false if not.
+ **/
 
 int	ft_isprint(int c)
 {

@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	ft_isascii
- *		c	Character to be checked
- *
- * Function:
- * Will check if c is on the ASCII table, returning TRUE/FALSE
- *
- * RETURN VALUES:
- * [TRUE  / 1]	('\0' <= c <= 127/DEL)
- * [FALSE / 0]	Any other value.
- */
+#include "libft.h"
+
+/** @brief
+ *  Checks if c is a character on the ASCII table:
+ * 
+ *  @param c		Character to be checked.
+ *  @return int		True if c on the ASCII table, false if not.
+ **/
 
 int	ft_isascii(int c)
 {
