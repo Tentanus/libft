@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+/**
+ *  @brief
+ *  Finds the node in the given list.
+ *
+ *  @param lst* list of t_list
+ */
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	int	size;

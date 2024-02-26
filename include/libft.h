@@ -203,8 +203,32 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
  *  @param del*  function to delete t_list node
  */
 void		ft_lstdelone(t_list *node, void (*del)(void *));
+/**
+ *  @brief
+ *  Takes a function, f, and applies it to the content stored in the list, lst.
+ *
+ *  @param lst* list of t_list
+ *  @param f*   function to modify content
+ */
 void		ft_lstiter(t_list *lst, void (*f)(void *));
+/**
+ *  @brief
+ *  Finds the last node in the given list.
+ *
+ *  @param lst* list of t_list
+ *  @return     the last node in the list
+ */
 t_list		*ft_lstlast(t_list *lst);
+/** TODO: this doc
+ *  @brief
+ *  Creates a new list, using lst as it's template and modifying the content
+ *  using f.
+ *
+ *  @warning     Allocates Memory, is to be freed.
+ *  @param lst*  list of t_list
+ *  @param f*    function to modify content
+ *  @param del*  function to delete t_list node
+ */
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list		*ft_lstnew(void *content);
 int			ft_lstsize(t_list *lst);
