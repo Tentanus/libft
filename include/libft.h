@@ -168,10 +168,41 @@ int			ft_toupper(int c);
 
 //		Functions:	LIST
 
+/**
+ *  @brief
+ *  Takes a t_list* node, new, and add it to the last node of list, lst,
+ *  if no list is give it will set new as the head of the list.
+ *
+ *  @param lst** locatoin of linked list of t_list
+ *  @param new*  a node of t_list
+ */
 void		ft_lstadd_back(t_list **lst, t_list *new);
+/**
+ *  @brief
+ *  Takes a t_list* node, new, and add it to the front of the list, lst,
+ *  if no list is give it will set new as the head of the list.
+ *
+ *  @param lst** locatoin of linked list of t_list
+ *  @param new*  a node of t_list
+ */
 void		ft_lstadd_front(t_list **lst, t_list *new);
+/**
+ *  @brief
+ *  Takes a list, lst, and runs the ft_lstdelone over every node,
+ *  deleting each node.
+ *
+ *  @param lst** locatoin of linked list of t_list
+ *  @param del*  function to delete t_list node
+ */
 void		ft_lstclear(t_list **lst, void (*del)(void *));
-void		ft_lstdelone(t_list *lst, void (*del)(void *));
+/**
+ *  @brief
+ *  Takes a node and runs the ft_lstdelone on it, deleting it,
+ *
+ *  @param node* node in linked list of t_list
+ *  @param del*  function to delete t_list node
+ */
+void		ft_lstdelone(t_list *node, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

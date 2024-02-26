@@ -12,10 +12,18 @@
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+/**
+ *  @brief
+ *  Takes a node and runs the ft_lstdelone on it, deleting it,
+ *
+ *  @param node* node in linked list of t_list
+ *  @param del*  function to delete t_list node
+ */
+
+void	ft_lstdelone(t_list *node, void (*del)(void*))
 {
 	if (del)
-		del(lst->content);
-	lst->next = NULL;
-	free(lst);
+		del(node->content);
+	node->next = NULL;
+	free(node);
 }
