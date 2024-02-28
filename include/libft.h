@@ -19,7 +19,10 @@
 # include <unistd.h>
 # include <stddef.h>
 
-//	MACROS
+//	MACROS / DEFINES
+
+# define true 1
+# define false 0
 
 //	STRUCTURES
 typedef struct s_list
@@ -43,6 +46,7 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_ishex(int c);
+int			ft_islower(int c);
 int			ft_ispath(int c);
 int			ft_isprint(int c);
 int			ft_isspace(int c);
@@ -103,7 +107,7 @@ void		ft_split_free(char **arr);
 
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *src);
-int			ft_stris(char *str, int (*is_f)(int));
+int			ft_stris(const char *str, int (*is_f)(int));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strjoin_fs1(char *s1, char const *s2);

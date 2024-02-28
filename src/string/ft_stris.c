@@ -10,18 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_stris(const char *str, int (*is_f)(int))
 {
 	int	index;
 
 	if (!str || !is_f)
-		return (0);
+		return (false);
 	index = 0;
 	while (str[index] != '\0')
 	{
 		if (!is_f((int) str[index]))
-			return (0);
+			return (false);
 		index++;
 	}
-	return (1);
+	return (true);
 }

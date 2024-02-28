@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isupper.c                                       :+:    :+:            */
+/*   ft_islower.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/03/31 11:28:25 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/03/31 17:37:53 by mweverli      ########   odam.nl         */
+/*   Created: 2024/01/31 11:28:25 by mweverli      #+#    #+#                 */
+/*   Updated: 2024/01/31 17:37:53 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  *		c	Character to be checked
  *
  * Function:
- * Will check if c is uppercase on the ASCII table, returning TRUE/FALSE
+ * Will check if c is lowercase on the ASCII table, returning TRUE/FALSE
  *
  * RETURN VALUES:
  * [TRUE  / 1]	('A' <= c <= 'Z')
@@ -25,7 +25,7 @@
 
 int	ft_isupper(int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (c >= 'a' && c <= 'z')
 		return (true);
 	return (false);
 }
