@@ -219,10 +219,10 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
  *  @return     the last node in the list
  */
 t_list		*ft_lstlast(t_list *lst);
-/** TODO: this doc
+/**
  *  @brief
- *  Creates a new list, using lst as it's template and modifying the content
- *  using f.
+ *  Creates a new list, with the content of lst taken through f.
+ *  If Anything goes wrong it clears the new list and returns NULL.
  *
  *  @warning     Allocates Memory, is to be freed.
  *  @param lst*  list of t_list
@@ -230,7 +230,23 @@ t_list		*ft_lstlast(t_list *lst);
  *  @param del*  function to delete t_list node
  */
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+/**
+ *  @brief
+ *  Creates a new t_list node,
+ *  setting it's content and setting the next pointer to NUL
+ *
+ *  @warning       Allocates Memory, is to be freed.
+ *  @param content the content stored in the node.
+ *  @return        the created node.
+ */
 t_list		*ft_lstnew(void *content);
+/**
+ *  @brief
+ *  Count the size of the given list.
+ *
+ *  @param lst* list of t_list.
+ *  @return     the number of nodes in lst.
+ */
 int			ft_lstsize(t_list *lst);
 
 //		Functions:	MATH
@@ -242,6 +258,9 @@ int			ft_lstsize(t_list *lst);
  *  @return uint32_t
  */
 int32_t		ft_abs(int32_t a);
+/**
+			 TODO: Remove ft_ternary;
+*/
 int			ft_ternary(int bol, int t, int f);
 
 //		Functions:	MEMORY

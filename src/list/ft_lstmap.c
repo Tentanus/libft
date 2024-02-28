@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/**
+ *  @brief
+ *  Creates a new list, with the content of lst taken through f.
+ *  If Anything goes wrong it clears the new list and returns NULL.
+ *
+ *  @warning     Allocates Memory, is to be freed.
+ *  @param lst*  list of t_list
+ *  @param f*    function to modify content
+ *  @param del*  function to delete t_list node
+ */
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*head;

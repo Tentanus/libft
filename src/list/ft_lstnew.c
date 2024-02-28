@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+/**
+ *  @brief
+ *  Creates a new t_list node,
+ *  setting it's content and setting the next pointer to NUL
+ *
+ *  @warning       Allocates Memory, is to be freed.
+ *  @param content the content stored in the node.
+ *  @return        the created node.
+ */
+
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
