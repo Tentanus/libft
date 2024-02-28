@@ -22,7 +22,7 @@
  *  @return long or 0 if non INT value;
  */
 
-int	ft_htoi(const char *str)
+int32_t	ft_htoi(const char *str)
 {
 	int		sign;
 	long	res;
@@ -34,16 +34,15 @@ int	ft_htoi(const char *str)
 	while (*str == '-' || *str == '+')
 		if (*str++ == '-')
 			sign *= -1;
-	if (*str == '0' && (*(str + 1) == 'x' || *(str + 1) == 'X'))
+	if (ft_strlen(str) >= 2 && *str == '0'
+		&& (*(str + 1) == 'x' || *(str + 1) == 'X'))
 		str += 2;
 	while (ft_ishex(*str))
 	{
-		if (*str >= '0' && *str <= '9')
+		if (ft_isdigit(*str))
 			res = res * 16 + (*str - '0');
-		if (*str >= 'a' && *str <= 'f')
+		else
 			res = res * 16 + (10 + *str - 'a');
-		if (*str >= 'A' && *str <= 'F')
-			res = res * 16 + (10 + *str - 'A');
 		str++;
 	}
 	if ((sign * res) < INT_MIN && res > INT_MAX)
