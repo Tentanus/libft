@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 11:33:31 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/03/31 17:49:33 by mweverli      ########   odam.nl         */
+/*   Updated: 2024/02/29 19:28:37 by mweverli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -258,15 +258,29 @@ int			ft_lstsize(t_list *lst);
  *  @return uint32_t
  */
 int32_t		ft_abs(int32_t a);
-/**
-			 TODO: Remove ft_ternary;
-*/
-int			ft_ternary(int bol, int t, int f);
+int			ft_ternary(int bol, int t, int f);	// TODO: Remove ft_ternary;
 
 //		Functions:	MEMORY
 
-void		ft_bzero(void *s, size_t n);
-void		*ft_calloc(size_t nitems, size_t size);
+/**
+ *  @brief
+ *  set n bytes to 0 at the pointer, ptr.
+ *
+ *  @param ptr  Pointer
+ *  @param n    bytes to be set
+ */
+void		ft_bzero(void *ptr, size_t n);
+/**
+ *  @brief
+ *  return an allocated block of memory of blocksize * n.
+ *  The memory has been set to zero[ft_bzero].
+ *
+ *  @warning			Allocates Memory, is to be freed.
+ *  @param n			Amount of blocks to be allocated.
+ *  @param blocksize	bytes in a block.
+ *  @return				Pointer to the allocated memory.
+ */
+void		*ft_calloc(size_t n, size_t blocksize);
 void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);

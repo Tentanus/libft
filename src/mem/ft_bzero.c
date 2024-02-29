@@ -12,7 +12,15 @@
 
 #include "libft.h" 
 
-void	ft_bzero(void *s, size_t n)
+/**
+ *  @brief
+ *  set n bytes to 0 at the pointer, ptr.
+ *
+ *  @param ptr  Pointer
+ *  @param n    bytes to be set
+ */
+
+void	ft_bzero(void *ptr, size_t n)
 {
-	ft_memset(s, '\0', n);
+	ft_memset(ptr, 0, n);
 }
