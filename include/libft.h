@@ -107,6 +107,7 @@ void		ft_split_free(char **arr);
 
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *src);
+size_t		ft_strfindis(const char *str, int (*is_f)(int));
 int			ft_stris(const char *str, int (*is_f)(int));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin(char const *s1, char const *s2);

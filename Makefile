@@ -97,6 +97,7 @@ SRC_STR			:=	\
 					\
 					ft_strchr.c			\
 					ft_strdup.c			\
+					ft_strfindis.c		\
 					ft_stris.c			\
 					ft_striteri.c		\
 					ft_strjoin.c		\
