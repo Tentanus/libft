@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_skip_char.c                                     :+:    :+:            */
+/*   ft_strskipchar.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_skip_char(const char *str, const char c)
+size_t	ft_strskipchar(const char *str, const char c)
 {
 	size_t	i;
 
