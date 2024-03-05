@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strfindis.c                                       :+:    :+:            */
+/*   ft_strfindis.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t ft_strfindis(const char *str, int (*is_f)(int))
+size_t	ft_strfindis(const char *str, int (*is_f)(int))
 {
 	size_t	idx;
 

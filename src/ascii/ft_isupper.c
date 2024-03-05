@@ -26,6 +26,6 @@
 int	ft_isupper(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (true);
-	return (false);
+		return (1);
+	return (0);
 }

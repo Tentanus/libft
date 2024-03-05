@@ -38,7 +38,7 @@ int32_t	ft_htoi(const char *str)
 	while (*str == '-' || *str == '+')
 		if (*str++ == '-')
 			sign *= -1;
-	if (*str == '0'	&& (*(str + 1) == 'x' || *(str + 1) == 'X'))
+	if (*str == '0' && (*(str + 1) == 'x' || *(str + 1) == 'X'))
 		str += 2;
 	while (ft_ishex(*str))
 	{

@@ -21,9 +21,6 @@
 
 //	MACROS / DEFINES
 
-# define true 1
-# define false 0
-
 //	STRUCTURES
 typedef struct s_list
 {
