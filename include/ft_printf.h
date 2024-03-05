@@ -50,9 +50,9 @@ int				put_uint(va_list list);
 
 //				FT_PRINTF_BIN
 int				put_bin(va_list list);
-//static int	put_bin_16(uint16_t num);
-//static int	put_bin_32(uint32_t num);
-//static int	put_bin_64(uint64_t num);
+//	static int	put_bin_16(uint16_t num);
+//	static int	put_bin_32(uint32_t num);
+//	static int	put_bin_64(uint64_t num);
 
 //				FT_PRINTF_MIS
 int				put_prc(va_list list);

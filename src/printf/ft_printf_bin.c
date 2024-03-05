@@ -14,23 +14,6 @@
 #include <stdarg.h>
 #include <stdint.h>
 
-static int	put_bin_16(uint16_t num);
-static int	put_bin_32(uint32_t num);
-static int	put_bin_64(uint64_t num);
-
-int	put_bin(va_list list)
-{
-	uint64_t	num;
-
-	num = va_arg(list, uint64_t);
-	if (num <= UINT16_MAX)
-		return (put_bin_16(num));
-	else if (num <= UINT32_MAX)
-		return (put_bin_32(num));
-	else
-		return (put_bin_64(num));
-}
-
 static int	put_bin_16(uint16_t num)
 {
 	int		i;
@@ -80,4 +63,17 @@ static int	put_bin_64(uint64_t num)
 		i++;
 	}
 	return (write(1, str, 64));
+}
+
+int	put_bin(va_list list)
+{
+	uint64_t	num;
+
+	num = va_arg(list, uint64_t);
+	if (num <= UINT16_MAX)
+		return (put_bin_16(num));
+	else if (num <= UINT32_MAX)
+		return (put_bin_32(num));
+	else
+		return (put_bin_64(num));
 }

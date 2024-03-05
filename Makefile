@@ -30,6 +30,7 @@ SRC_ASC			:=	\
 					ft_isascii.c		\
 					ft_isdigit.c		\
 					ft_ishex.c			\
+					ft_islower.c		\
 					ft_ispath.c			\
 					ft_isprint.c		\
 					ft_isspace.c		\
@@ -96,6 +97,7 @@ SRC_STR			:=	\
 					\
 					ft_strchr.c			\
 					ft_strdup.c			\
+					ft_strfindis.c		\
 					ft_stris.c			\
 					ft_striteri.c		\
 					ft_strjoin.c		\

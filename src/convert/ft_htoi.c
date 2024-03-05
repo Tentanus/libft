@@ -34,15 +34,14 @@ int32_t	ft_htoi(const char *str)
 	while (*str == '-' || *str == '+')
 		if (*str++ == '-')
 			sign *= -1;
-	if (ft_strlen(str) >= 2 && *str == '0'
-		&& (*(str + 1) == 'x' || *(str + 1) == 'X'))
+	if (*str == '0' && (*(str + 1) == 'x' || *(str + 1) == 'X'))
 		str += 2;
 	while (ft_ishex(*str))
 	{
 		if (ft_isdigit(*str))
 			res = res * 16 + (*str - '0');
 		else
-			res = res * 16 + (10 + *str - 'a');
+			res = res * 16 + (10 + *str - ft_ternary(*str < 92, 'A', 'a'));
 		str++;
 	}
 	if ((sign * res) < INT_MIN && res > INT_MAX)

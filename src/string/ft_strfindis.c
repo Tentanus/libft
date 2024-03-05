@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strskipchar.c                                   :+:    :+:            */
+/*   ft_strfindis.c                                     :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: mweverli <mweverli@student.codam.n>          +#+                     */
+/*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/10 15:41:20 by mweverli      #+#    #+#                 */
-/*   Updated: 2023/02/28 19:08:40 by mweverli      ########   odam.nl         */
+/*   Created: 2024/04/01 15:28:59 by mweverli      #+#    #+#                 */
+/*   Updated: 2024/04/01 15:29:01 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strskipchar(const char *str, const char c)
+size_t	ft_strfindis(const char *str, int (*is_f)(int))
 {
-	size_t	i;
+	size_t	idx;
 
-	i = 0;
-	while (str[i] == c)
-		i++;
-	return (i);
+	if (!str || !is_f)
+		return (0);
+	idx = 0;
+	while (str[idx])
+	{
+		if (is_f(str[idx]))
+			break ;
+		idx++;
+	}
+	return (idx);
 }

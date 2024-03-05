@@ -20,7 +20,7 @@
 # include <unistd.h>
 # include <stddef.h>
 
-//	MACROS
+//	MACROS / DEFINES
 
 //	STRUCTURES
 typedef struct s_list
@@ -67,6 +67,7 @@ int			ft_isdigit(int c);
  *  @return int		True if c is a hexadecimal character, false if not.
  **/
 int			ft_ishex(int c);
+int			ft_islower(int c);// TODO: add Documentation.
 /** @brief
  *  Checks if c is a path character on the ASCII table:
  *  @warning This is a non-POSIX compliant set.
@@ -305,7 +306,8 @@ void		ft_split_free(char **arr);
 
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *src);
-int			ft_stris(char *str, int (*is_f)(int));
+size_t		ft_strfindis(const char *str, int (*is_f)(int));
+int			ft_stris(const char *str, int (*is_f)(int));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strjoin_fs1(char *s1, char const *s2);

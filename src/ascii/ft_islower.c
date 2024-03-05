@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_stris.c                                         :+:    :+:            */
+/*   ft_islower.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: mweverli <mweverli@codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/04 15:28:59 by mweverli      #+#    #+#                 */
-/*   Updated: 2021/10/04 15:29:01 by mweverli      ########   odam.nl         */
+/*   Created: 2024/01/31 11:28:25 by mweverli      #+#    #+#                 */
+/*   Updated: 2024/01/31 17:37:53 by mweverli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_stris(const char *str, int (*is_f)(int))
-{
-	int	index;
+/*	ft_isupper
+ *		c	Character to be checked
+ *
+ * Function:
+ * Will check if c is lowercase on the ASCII table, returning TRUE/FALSE
+ *
+ * RETURN VALUES:
+ * [TRUE  / 1]	('A' <= c <= 'Z')
+ * [FALSE / 0]	Any other value.
+ */
 
-	if (!str || !is_f)
-		return (0);
-	index = 0;
-	while (str[index] != '\0')
-	{
-		if (!is_f((int) str[index]))
-			return (0);
-		index++;
-	}
-	return (1);
+int	ft_isupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	return (0);
 }
