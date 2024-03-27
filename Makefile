@@ -34,8 +34,7 @@ SRC_ASC			:=	\
 					ft_ispath.c			\
 					ft_isprint.c		\
 					ft_isspace.c		\
-					ft_isupper.c		\
-					ft_isvisible.c
+					ft_isupper.c
 
 SRC_DIR_CON		:=	/convert
 SRC_CON			:=	\
