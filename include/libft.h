@@ -97,6 +97,7 @@ int			ft_isspace(int c);
  *  @return int		True if c is a uppercase character, false if not.
  **/
 int			ft_isupper(int c);
+int			ft_isvisible(const int c);
 
 //		Functions:	CONVERT
 
