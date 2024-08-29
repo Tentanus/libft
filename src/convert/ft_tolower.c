@@ -17,6 +17,7 @@
  *  Will take in a char and if possible return the lowercase counterpart.
  *
  *  @param c
+ *
  *  @return int
  */
 

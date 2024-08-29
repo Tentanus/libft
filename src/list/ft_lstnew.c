@@ -14,11 +14,12 @@
 
 /**
  *  @brief
- *  Creates a new t_list node,
- *  setting it's content and setting the next pointer to NUL
+ *  Creates a new t_list node, setting it's content 
+ *  and setting the next pointer to NUL
  *
- *  @warning       Allocates Memory, is to be freed.
  *  @param content the content stored in the node.
+ *  @warning       Allocates Memory, is to be freed.
+ *
  *  @return        the created node.
  */
 

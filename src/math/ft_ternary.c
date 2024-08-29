@@ -10,6 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ *  @brief
+ *  Will take a boolean and return the value of t or f.
+ *
+ *  @param bol
+ *  @param t
+ *  @param f
+ *
+ *  @return int
+ */
+
 int	ft_ternary(int bol, int t, int f)
 {
 	if (bol)

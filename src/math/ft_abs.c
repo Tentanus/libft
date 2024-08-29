@@ -17,17 +17,11 @@
  *  Will take a int32_t and if possible return absolute value.
  *
  *  @param a
+ *
  *  @return uint32_t
  */
 
 int32_t	ft_abs(int32_t a)
 {
-	int32_t	ab;
-
-	if (a < 0)
-	{
-		ab = a * -1;
-		return (ab);
-	}
-	return (a);
+	return (a < 0 ? -a : a);
 }

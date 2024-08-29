@@ -19,6 +19,7 @@
  *
  *  @warning Segfaults when given NULL.
  *  @param str
+ *
  *  @return int32_t or 0 if non INT value;
  */
 

@@ -21,6 +21,8 @@
  *  @param lst*  list of t_list
  *  @param f*    function to modify content
  *  @param del*  function to delete t_list node
+ *
+ *  @return      the new list.
  */
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
@@ -42,24 +44,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (head);
 }
-
-/* Potential rewrite.
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*head;
-	t_list	*new;
-
-	while (lst)
-	{
-		new = ft_lstnew(f(lst->content));
-		if (!new)
-		{
-			ft_lstclear(&head, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&head, new);
-		lst = lst->next;
-	}
-	return (head);
-}
-*/

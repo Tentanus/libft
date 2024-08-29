@@ -14,9 +14,11 @@
 
 /**
  *  @brief
- *  Finds the node in the given list.
+ *  Finds the last node in the given list.
  *
- *  @param lst* list of t_list
+ *  @param lst*		list of t_list
+ *
+ *  @return lst*	last node of list.
  */
 
 t_list	*ft_lstlast(t_list *lst)

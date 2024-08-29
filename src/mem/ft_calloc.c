@@ -20,6 +20,7 @@
  *  @warning			Allocates Memory, is to be freed.
  *  @param n			Amount of blocks to be allocated.
  *  @param blocksize	bytes in a block
+ *
  *  @return				Pointer to the allocated memory.
  */
 
