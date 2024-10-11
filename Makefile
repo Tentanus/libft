@@ -137,7 +137,7 @@ OBJ_SUB_DIRS	:=	$(sort $(dir $(OBJ)))
 
 RM			:=	rm -rf
 
-CC			:=	cc
+CC			:=	clang
 CFL			:=	-Wall -Werror -Wextra -Wpedantic
 
 ifdef FSAN
@@ -155,19 +155,24 @@ endif
 
 all: $(OBJ_SUB_DIRS) $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) compile_commands.json
 	@ar rcs $(NAME) $^
 	@echo "$(ORANGE)ar rcs $(NAME)$(RESET) $(notdir $(OBJ))"
 
 $(OBJ_SUB_DIRS):
 	mkdir -p $@
 
+compile_commands.json: $(OBJ)
+	@echo "$(ORANGE)compiling compile_commands.json$(RESET)"
+	@(echo "["; cat $(OBJ:%=%.json); echo "]") > $@
+
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFL) $(INCLUDE) -c $< -o $@
+	$(CC) $(CFL) -MJ $@.json $(INCLUDE) -MMD -c $< -o $@
 
 clean:
 	@echo "$(RED)cleaning libft$(RESET)"
 	$(RM) $(OBJ_DIR)
+	$(RM) compile_commands.json
 
 fclean: clean
 	$(RM) $(NAME)
@@ -188,7 +193,7 @@ test: all
 #=========    MISCELLANEOUS:    =========#
 #========================================#
 
-.PHONY: all clean debug fclean rebug re test
+.PHONY: all clean debug fclean rebug re test compile_commands.json
 
 .DEFAULT_GOAL := all
 
